@@ -4,4 +4,5 @@ project(McGuffin)
 set(CMAKE_CXX_STANDARD 23)
 
 add_executable(McGuffin main.cpp
-        read.h)
+        read.h
+        url.h)
