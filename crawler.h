@@ -1,18 +1,18 @@
 #ifndef MCGUFFIN_CRAWLER_H
 #define MCGUFFIN_CRAWLER_H
 
-#include <chrono>           // steady_clock - delays and back-off
-#include <deque>            // deque - pages waiting per site
-#include <fstream>          // ofstream - log file
-#include <map>              // map - pages, edges, queue
-#include <string>           // string
-#include <unordered_map>    // unordered_map - URL-to-ID map, hosts, sites
-#include <utility>          // pair - edge keys
-#include <vector>           // vector
-#include <boost/asio.hpp>   // io_context, steady_timer
+#include <chrono>
+#include <deque>
+#include <fstream>
+#include <map>
+#include <string>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+#include <boost/asio.hpp>
 #include "dnsResolver.h"
-#include "fetcher.h"
-#include "linkExtractor.h"
+#include "fetch.h"
+#include "extractor.h"
 #include "urlStandard.h"
 
 using namespace std;
@@ -50,7 +50,7 @@ enum class pageStatus {
 // Another url that leads to the same page
 struct aliasRecord {
     string key;         // the other page key
-    string mergeType;   // "redirect" or "contentHash"
+    string mergeType;   // "redirect" / "contentHash"
 };
 
 // One node of the graph
@@ -58,7 +58,7 @@ struct pageRecord {
     int id = -1;
     string key;                     // normalized identity
     string fetchUrl;                // address used to fetch
-    vector<string> originalUrls;    // urls as found, before normalization
+    vector<string> originalUrls;    // urls before normalization
     vector<aliasRecord> aliases;    // other keys merged into this page
     int hostId = -1;
     int depth = 0;                  // link distance from the seed
@@ -81,7 +81,7 @@ struct pageRecord {
 struct edgeRecord {
     int from = -1;
     int to = -1;
-    int weight = 0;                 // number of links from "from" to "to"
+    int weight = 0;                     // number of links from "from" to "to"
     bool navigationByLocation = false;  // every link was inside nav/header/footer/aside
     bool navigationByFrequency = false; // target is linked from most pages of the site
 };
@@ -126,7 +126,7 @@ private:
     // async machinery (single thread: everything runs inside context.run())
     boost::asio::io_context context;
     dnsResolver resolver;
-    fetcher pageFetcher;
+    fetch pageFetch;
     boost::asio::steady_timer wakeTimer;
     bool wakeArmed = false;
 
@@ -158,7 +158,7 @@ private:
     string dataPath;
     string logPath;
 
-    // SCHEDULING
+    // order
     void enqueue(int pageId, bool atFront = false);
     bool hasWaitingWork();
     void scheduleNext();
@@ -167,16 +167,16 @@ private:
     void startProbe(caseProbe probe);
     void adjustConcurrency(siteRecord& site, bool clean);
     void handleRateLimit(siteRecord& site, int retryAfterSeconds);
-    bool shouldRetry(pageRecord& page, fetchResult& result);
+    bool shouldRetry(pageRecord& page, fetch& result);
     void armWakeTimer();
 
-    // HANDLING A FETCHED PAGE
-    void onFetchComplete(int pageId, fetchResult result);
-    void onProbeComplete(caseProbe probe, fetchResult result);
-    int handleRedirectResult(int pageId, fetchResult& result);
-    void recordResultFields(pageRecord& page, fetchResult& result);
-    void retryOrFail(int pageId, fetchResult& result);
-    void processHtml(int pageId, fetchResult& result);
+    // handling fetch
+    void onFetchComplete(int pageId, fetch result);
+    void onProbeComplete(caseProbe probe, fetch result);
+    int handleRedirectResult(int pageId, fetch& result);
+    void recordResultFields(pageRecord& page, fetch& result);
+    void retryOrFail(int pageId, fetch& result);
+    void processHtml(int pageId, fetch& result);
     void recordEdges(int fromId, vector<extractedLink>& links, string pageUrl, string baseHref);
     int getOrCreatePage(urlStandard n, int depth);
     int getOrCreateHost(string name);
@@ -185,16 +185,16 @@ private:
     void queueCaseProbe(int pageId);
     bool isResourceLink(string path);
 
-    // MERGING
+    // merging
     int applyContentHash(int pageId, string hashableBody);
     string computeSha256(string text);
     void mergePages(int survivorId, int mergedId, string mergeType);
 
-    // FINISHING THE GRAPH
+    // finishing graph
     void markUnfetched();
     void markNavigationByFrequency();
 
-    // STORAGE
+    // storage
     string makeFileName(string seedKey);
     void ensureOutputFolder();
     void saveToJson();
@@ -202,25 +202,25 @@ private:
     void validateLoaded();
     void renormalizeIfOlder(int savedVersion);
 
-    // LOGGING
+    // logging
     void logRunHeader();
     void logEvent(string type, string message);
     string timeNow();
 
-    // HELPERS
+    // helpers
     pageRecord* findPage(int pageId);
     int resolveMerged(int pageId);
     string statusToText(pageStatus status);
     pageStatus textToStatus(string text);
 
 public:
-    // Constructor: sets up the resolver, fetcher and timer (throws if SSL can't be set up)
+    // Constructor
     crawler(crawlConfig config);
 
-    // Run the crawl and return the fetch urls of every page on the graph
+    // Run crawl and return fetch urls of every page on the graph
     vector<string> run();
 
-    // INTERFACE FOR PART 2 AND PART 3
+    // for parts 2 & 3
     // Page ID for a key, alias or url; -1 if unknown
     int lookupId(string keyOrUrl);
     // Key for a page ID; "" if unknown

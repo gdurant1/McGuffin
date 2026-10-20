@@ -103,7 +103,7 @@ inline bool isSupportedScheme(string scheme) {
     return scheme == "http" || scheme == "https";
 }
 
-// Default port for scheme
+// Default ports
 // 80 for http, 443 for https, 0 for anything else
 inline int defaultPort(string scheme) {
     scheme = toLowerText(scheme);
@@ -116,9 +116,7 @@ inline int defaultPort(string scheme) {
     return 0;
 }
 
-// LINK CHECKS
-// True for links the crawler always skips:
-// Case and surrounding spaces do not matter
+// check links
 inline bool isSkippableLink(string text) {
     text = toLowerText(trimText(text));
     //empty href="" links to the same page
@@ -136,9 +134,8 @@ inline bool isFragmentOnly(string text) {
     return !text.empty() && text[0] == '#';
 }
 
-// PARSING
-// Turns url text into a url struct.
-// True if text is a valid scheme name
+// parsing
+// url text into struct.
 inline bool isValidScheme(string text) {
     //must not be empty and must start with a letter
     if (text.empty() || !isalpha((unsigned char)text[0])) {
@@ -155,9 +152,9 @@ inline bool isValidScheme(string text) {
 }
 
 // Convert port text to a number
-// Returns nullopt if the text is not a valid port (digits only, 1-65535)
+// Returns nullopt if the text is not a valid port
 inline optional<int> parsePort(string text) {
-    //empty, or more than 5 digits can't be a valid port (max 65535)
+    //empty, or more than 5 digits can't be a valid port
     if (text.empty() || text.size() > 5) {
         return nullopt;
     }
@@ -175,8 +172,7 @@ inline optional<int> parsePort(string text) {
     return port;
 }
 
-// Split an absolute or scheme-relative url into its parts
-// Nothing is normalized here: case, ports, slashes stay exactly as written.
+// Split absolute or scheme relative url into its parts
 inline optional<url> parseUrl(string text) {
     url result;
 
@@ -188,7 +184,6 @@ inline optional<url> parseUrl(string text) {
     }
 
     // scheme
-    //"rest" will hold everything after the scheme and "//"
     string rest;
     int schemeEnd = (int)text.find("://");
     //absolute url: scheme comes before "://"
@@ -209,7 +204,7 @@ inline optional<url> parseUrl(string text) {
     }
 
     // split authority (host + port) from the rest
-    //authority ends at the first /, ? or #
+    //ends at the first /, ? or #
     int authorityEnd = (int)rest.find_first_of("/?#");
     string authority;
     string remainder;
@@ -276,7 +271,6 @@ inline optional<url> parseUrl(string text) {
     }
 
     // fragment (after the first "#")
-    //removed first, because a "?" inside a fragment is not a query
     int hashSign = (int)remainder.find('#');
     if (hashSign != (int)string::npos) {
         result.fragment = remainder.substr(hashSign + 1);
