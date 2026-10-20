@@ -1,0 +1,9 @@
+#ifndef MCGUFFIN_URLSTANDARD_H
+#define MCGUFFIN_URLSTANDARD_H
+
+
+class urlStandard {
+};
+
+
+#endif //MCGUFFIN_URLSTANDARD_H

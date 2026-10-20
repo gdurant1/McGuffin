@@ -9,4 +9,6 @@ add_executable(McGuffin main.cpp
         dnsResolver.cpp
         dnsResolver.h
         crawler.cpp
-        crawler.h)
+        crawler.h
+        urlStandard.cpp
+        urlStandard.h)
