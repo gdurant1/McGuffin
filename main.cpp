@@ -26,7 +26,11 @@ int main() {
 		graph.addVertex(tempura);
 	}
 
+	graph.getVertex(temp.at(0))->setColor("red");
+	
 
+	bridges.setDataStructure(graph);
+	bridges.visualize();
 
 	return 0;
 }
