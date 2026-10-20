@@ -1,0 +1,9 @@
+#ifndef MCGUFFIN_DNSRESOLVER_H
+#define MCGUFFIN_DNSRESOLVER_H
+
+
+class dnsResolver {
+};
+
+
+#endif //MCGUFFIN_DNSRESOLVER_H
