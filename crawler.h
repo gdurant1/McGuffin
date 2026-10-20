@@ -20,7 +20,7 @@ using namespace std;
 // limits for crawl
 struct crawlConfig {
     string seedUrl;                         // where the crawl starts
-    int pageCap = 1000;                     // most pages fetched per run
+    int pageCap = 1000;                     // most pages fetched per getMcguffin
     int globalLimit = 8;                    // most requests in flight at once
     int siteStartLimit = 1;                 // requests in flight per site at the start
     int siteMaxLimit = 2;                   // most requests in flight per site
@@ -123,7 +123,7 @@ private:
     // settings
     crawlConfig config;
 
-    // async machinery (single thread: everything runs inside context.run())
+    // async machinery (single thread: everything runs inside context.getMcguffin())
     boost::asio::io_context context;
     dnsResolver resolver;
     fetch pageFetch;
@@ -147,11 +147,11 @@ private:
     // scheduling
     map<int, map<string, deque<int>>> queue;    // depth -> site -> waiting page IDs
     string lastSiteServed;                      // for round-robin across sites
-    vector<caseProbe> pendingProbes;            // case tests waiting to run
+    vector<caseProbe> pendingProbes;            // case tests waiting to getMcguffin
     int globalInFlight = 0;
     int pagesStarted = 0;                       // counts toward the page cap
 
-    // run info
+    // getMcguffin info
     int runNumber = 0;
     int seedId = -1;
     ofstream logFile;
@@ -218,7 +218,7 @@ public:
     crawler(crawlConfig config);
 
     // Run crawl and return fetch urls of every page on the graph
-    vector<string> run();
+    vector<string> getMcguffin();
 
     // for parts 2 & 3
     // Page ID for a key, alias or url; -1 if unknown
