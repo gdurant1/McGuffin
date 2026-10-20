@@ -11,4 +11,8 @@ add_executable(McGuffin main.cpp
         crawler.cpp
         crawler.h
         urlStandard.cpp
-        urlStandard.h)
+        urlStandard.h
+        fetch.cpp
+        fetch.h
+        extractor.cpp
+        extractor.h)
