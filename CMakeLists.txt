@@ -3,7 +3,8 @@ project(McGuffin)
 
 set(CMAKE_CXX_STANDARD 23)
 
-include_directories(${CMAKE_SOURCE_DIR}/third_party)
+include_directories(${CMAKE_SOURCE_DIR}/third_party/include)
+link_directories(${CMAKE_SOURCE_DIR}/third_party/lib)
 
 add_executable(McGuffin main.cpp
         read.h
@@ -18,3 +19,15 @@ add_executable(McGuffin main.cpp
         fetch.h
         extractor.cpp
         extractor.h)
+
+target_link_libraries(McGuffin PRIVATE
+        boost_json-gcc15-mt-x64-1_92
+        boost_container-gcc15-mt-x64-1_92
+        boost_context-gcc15-mt-x64-1_92
+        boost_date_time-gcc15-mt-x64-1_92
+        ssl
+        crypto
+        ws2_32
+        crypt32
+        bcrypt
+)
