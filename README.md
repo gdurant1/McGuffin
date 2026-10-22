@@ -20,6 +20,10 @@
 | `vcpkg.json` | Library list for vcpkg: Boost (Asio, Beast, JSON), OpenSSL and libpsl. |
 | `data/` | Default output folder for each crawl's `.json` and `.log` files (not committed). |
 
+## Why some nodes have no lines
+
+The graph page (`web/index.html`) shows only part of a crawl so it stays fast and readable: the fetched and failed pages, the most-linked unfetched pages, and the heaviest links, up to a set limit. Navigation links (nav, header, footer, aside) are hidden on purpose. A dot with no lines still has links in the crawl data; they just weren't drawn. Usually they were low-weight links cut by the limit, menu links, or links to pages that aren't shown. Failed pages were never downloaded, so they have no outgoing links at all.
+
 ## Get the code from GitHub
 
 - **CLion:** File → New → Project from Version Control, then enter `https://github.com/gdurant1/McGuffin.git`.

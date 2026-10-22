@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>McGuffin Graph</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <header class="top">
+        <div class="titles">
+            <h1>McGuffin Graph <span id="badge" class="badge sample">Sample data</span></h1>
+            <p class="seed" id="seedLine">Seed: https://site.com/</p>
+        </div>
+        <div class="drop">
+            <label class="btn primary" for="fileInput">Open crawl .json</label>
+            <input id="fileInput" type="file" accept=".json,application/json" hidden>
+            <button class="btn" id="sampleBtn" type="button">Show sample</button>
+        </div>
+    </header>
+    <p class="status-msg" id="fileNote">Showing a made-up sample. Open a crawl file from your data folder.</p>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="layout">
+        <aside class="panel path-panel">
+            <div class="panel-head">
+                <h2>Path</h2>
+            </div>
+            <p class="small" id="pathSummary">Run a search to list the pages between start and end.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr><th class="num">#</th><th>Page</th><th class="num">Link weight</th><th class="num">Page weight</th></tr>
+                    </thead>
+                    <tbody id="pathBody"></tbody>
+                </table>
+            </div>
+            <p class="small">Link weight = number of links from the page above. Page weight = all incoming links to the page.</p>
+        </aside>
+
+        <div class="right">
+            <section class="panel">
+                <div class="panel-head">
+                    <h2>Link graph</h2>
+                    <div class="legend">
+                        <span><i style="background:var(--fetched)"></i>Fetched</span>
+                        <span><i style="background:var(--failed)"></i>Failed</span>
+                        <span><i style="background:var(--unfetched)"></i>Unfetched</span>
+                        <span><i style="background:var(--explored)"></i>Explored</span>
+                        <span><i style="background:var(--path)"></i>Path</span>
+                        <span class="ramp">Line weight <b>1</b><i class="ramp-bar"></i><b>257+</b></span>
+                    </div>
+                </div>
+                <p class="small">Hover a node to highlight its links. Double-click (or double-tap) to send a wave. Right-click to focus on it.
+                    Pages with no lines are hidden until a search reaches them. Drag to pan, scroll or pinch to zoom.</p>
+                <div class="graph-wrap" id="graphBox">
+                    <svg id="graph" aria-label="Link graph"></svg>
+                    <div class="tip" id="tooltip" hidden></div>
+                    <p class="graph-note" id="status"></p>
+                </div>
+                <div class="controls">
+                    <button class="btn" id="resetView" type="button">Reset view</button>
+                    <label for="twoWay"><input id="twoWay" type="checkbox"> Follow links both ways</label>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-head">
+                    <h2>Path search</h2>
+                    <p class="small">Press Select Start or Select end, then click a node.</p>
+                </div>
+                <div class="search-grid">
+                    <div class="detail">
+                        <dl>
+                            <dt>Start</dt><dd class="mono" id="startLabel">none</dd>
+                            <dt>End</dt><dd class="mono" id="endLabel">none</dd>
+                        </dl>
+                        <div class="controls">
+                            <button class="btn" id="selectStart" type="button">Select Start</button>
+                            <button class="btn" id="selectEnd" type="button">Select end</button>
+                        </div>
+                        <p class="small" id="pickNote"></p>
+                        <label for="search" class="small">Or find a page by url</label>
+                        <input id="search" list="pageList" placeholder="type part of a url">
+                        <datalist id="pageList"></datalist>
+                    </div>
+                    <div class="detail">
+                        <label for="algorithm" class="small">Algorithm</label>
+                        <select id="algorithm">
+                            <option value="bfs">Breadth-first search (fewest links)</option>
+                            <option value="dfs">Depth-first search</option>
+                            <option value="dijkstra">Dijkstra (strongest links)</option>
+                        </select>
+                        <label for="speed" class="small">Speed <span class="mono" id="speedLabel">60 ms</span> per step</label>
+                        <input id="speed" type="range" min="10" max="400" step="10" value="60">
+                        <div class="controls">
+                            <button class="btn primary" id="run" type="button">Run</button>
+                            <button class="btn" id="clear" type="button">Clear</button>
+                        </div>
+                        <p class="small" id="result"></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
