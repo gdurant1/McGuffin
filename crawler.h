@@ -10,10 +10,8 @@
 #include <utility>
 #include <vector>
 #include <boost/asio.hpp>
-
 #include "extractor.h"
 #include "fetch.h"
-#include "urlStandard.h"
 
 using namespace std;
 
@@ -130,7 +128,7 @@ private:
     int getOrCreatePage(normalizedUrl n, int depth);
     int getOrCreateHost(string name);
     void updateHostDns(int hostId, string fetchUrl);
-    bool resourceLink(string path);
+    bool isResourceLink(string path);
 
     int applyContentHash(int pageId, string hashableBody);
     string computeSha256(string text);

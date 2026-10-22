@@ -1,3 +1,5 @@
+// each download goes through dns, connect, tls, request, response and redirects
+
 #include <filesystem>
 #include <memory>
 #include <stdexcept>
@@ -5,7 +7,6 @@
 #include <boost/beast/http.hpp>
 #include <boost/beast/ssl.hpp>
 #include <openssl/x509.h>
-
 #include "fetch.h"
 
 using namespace std;

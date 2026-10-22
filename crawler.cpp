@@ -7,9 +7,7 @@
 #include <stdexcept>
 #include <openssl/evp.h>
 #include <boost/json.hpp>
-
 #include "crawler.h"
-#include "url.h"
 
 using namespace std;
 namespace json = boost::json;
@@ -375,7 +373,7 @@ void crawler::recordEdges(int fromId, vector<extractedLink>& links, string pageU
     int fromDepth = this->pages[fromId].depth;
     for (int i = 0; i < (int)links.size(); i++) {
         optional<normalizedUrl> n = this->standard.normalize(pageUrl, baseHref, links[i].url);
-        if (!n.has_value() || this->resourceLink(n.value().path)) {
+        if (!n.has_value() || this->isResourceLink(n.value().path)) {
             continue;
         }
         int pagesBefore = this->nextPageId;
@@ -456,7 +454,7 @@ void crawler::updateHostDns(int hostId, string fetchUrl) {
 }
 
 // images, scripts, styles, documents and media are skipped before fetching
-bool crawler::resourceLink(string path) {
+bool crawler::isResourceLink(string path) {
     static const vector<string> extensions = {
         ".jpg", ".jpeg", ".png", ".gif", ".svg", ".webp", ".ico", ".bmp", ".tif", ".tiff",
         ".css", ".js", ".mjs", ".json", ".xml", ".rss", ".atom",
