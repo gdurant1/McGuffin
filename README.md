@@ -61,3 +61,23 @@ Then follow one of the two sections below.
    To get a crawl file out of a Codespace, right-click it under `data/` in the file panel and choose Download.
 
 Running the same seed again loads the saved `.json` and adds to it.
+
+## View the graph (web folder)
+
+`web/index.html` shows a crawl as an interactive graph. It opens with a made-up sample; there are two ways to show a real crawl.
+
+**Option A: serve the project (easiest in Codespaces).** The page lists every `.json` in `data/` in a menu next to the buttons.
+
+1. Run a crawl first so there is a `data/<seed>.json` file.
+2. From the project folder (not from inside `web/`, so both `web/` and `data/` are reachable), start a server:
+   ```
+   python3 -m http.server 8000
+   ```
+   On Windows, use `py -m http.server 8000` if `python3` isn't found.
+3. Open the page:
+   - **Codespaces:** in the **Ports** tab, click the globe icon next to port 8000, then add `/web/` to the end of the address.
+   - **Local:** go to `http://localhost:8000/web/`.
+4. Pick a crawl from the **Load from data/** menu. To open one directly, add `?file=` to the address, for example `/web/?file=books.toscrape.com.json`.
+5. Stop the server with Ctrl+C when you're done.
+
+**Option B: open a file from your computer.** Open `web/index.html` in a browser (no server needed) and click **Open crawl .json**. This picker only sees files on your own computer, so in Codespaces download the crawl first: right-click it under `data/` and choose Download.
