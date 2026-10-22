@@ -10,7 +10,7 @@ find_package(OpenSSL REQUIRED)
 find_path(PSL_INCLUDE_DIR libpsl.h REQUIRED)
 find_library(PSL_LIBRARY NAMES psl REQUIRED)
 
-add_executable(McGuffin main.cpp crawler.cpp dnsResolver.cpp extractor.cpp fetch.cpp urlStandard.cpp)
+add_executable(McGuffin main.cpp crawler.cpp dnsResolver.cpp extractor.cpp fetch.cpp urlStandard.cpp graph.cpp)
 target_include_directories(McGuffin PRIVATE ${PSL_INCLUDE_DIR})
 target_link_libraries(McGuffin PRIVATE Boost::asio Boost::beast Boost::json OpenSSL::SSL OpenSSL::Crypto ${PSL_LIBRARY})
 
