@@ -14,11 +14,6 @@
 | `read.h` | readlib, copied from https://github.com/ShakaUVM/read; used by the extractor. |
 | `cacert.pem` | Bundled trusted certificates, used when the system certificate store isn't available (needed on Windows). |
 | `data/` | Default output folder for each crawl's `.json` and `.log` files (not committed). |
-
-## Part 2: graph (not in the build yet)
-
-| File | What it does |
-|---|---|
 | `graph.cpp` | Runs the BFS and DFS crawls, adds each page's links, and finds shortest distances from the start url. |
 | `graph.h` | Declares `WebsiteGraph`, `GraphNode` and the `LinkFetcher` callback the crawler provides. |
 | `graph_demo.cpp` | Test program for `WebsiteGraph` with a fake site; has its own `main`. |
