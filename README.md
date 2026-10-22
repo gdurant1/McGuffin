@@ -1,6 +1,6 @@
 # McGuffin — Files
 
-## Part 1: web crawler
+## web crawler
 
 | File | What it does |
 |---|---|
