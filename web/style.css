@@ -137,6 +137,12 @@ header.top {
     gap: 10px;
 }
 
+/* crawl menu from the data folder: sized to its content, not full width */
+.drop select {
+    width: auto;
+    max-width: 260px;
+}
+
 .btn {
     padding: 9px 14px;
     font: 500 14px var(--font-body);

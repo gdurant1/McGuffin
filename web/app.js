@@ -924,8 +924,35 @@ function show(raw, fileName) {
     setStatus("");
 }
 
+// when the project is served over http: load a crawl straight from data/
+function loadFromServer(name) {
+    document.getElementById("fileNote").textContent = "Loading " + name + "...";
+    fetch("../data/" + encodeURIComponent(name)).then(response => {
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        return response.json();
+    }).then(raw => {
+        if (!Array.isArray(raw.pages)) throw new Error("no pages list");
+        show(raw, name);
+    }).catch(error => {
+        document.getElementById("fileNote").textContent = "Couldn't load " + name + ": " + error.message;
+    });
+}
+
+// read the server's listing of data/ and put each .json in the menu; does nothing without a server
+function listServerFiles() {
+    fetch("../data/").then(response => response.ok ? response.text() : Promise.reject()).then(html => {
+        const names = [...new DOMParser().parseFromString(html, "text/html").querySelectorAll("a")]
+            .map(a => decodeURIComponent(a.getAttribute("href"))).filter(name => name.endsWith(".json"));
+        if (names.length === 0) return;
+        const menu = document.getElementById("dataFiles");
+        menu.replaceChildren(new Option("Load from data/...", ""), ...names.map(name => new Option(name, name)));
+        menu.hidden = false;
+    }).catch(() => {});
+}
+
 // controls
 document.getElementById("fileInput").addEventListener("change", e => { if (e.target.files[0]) loadFile(e.target.files[0]); });
+document.getElementById("dataFiles").addEventListener("change", e => { if (e.target.value) loadFromServer(e.target.value); });
 document.getElementById("sampleBtn").addEventListener("click", () => show(makeSample(), "sample"));
 document.getElementById("selectStart").addEventListener("click", () => startPicking("start"));
 document.getElementById("selectEnd").addEventListener("click", () => startPicking("end"));
@@ -961,3 +988,6 @@ document.getElementById("resetView").addEventListener("click", () => {
 });
 
 show(makeSample(), "sample");
+listServerFiles();
+const wantedFile = new URLSearchParams(location.search).get("file");
+if (wantedFile) loadFromServer(wantedFile);
