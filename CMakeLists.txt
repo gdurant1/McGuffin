@@ -24,3 +24,9 @@ endif()
 if(MINGW)
     target_compile_options(McGuffin PRIVATE -Wa,-mbig-obj)
 endif()
+# windows: copy the vcpkg dlls and cacert.pem next to McGuffin.exe so it can start
+if(WIN32)
+    file(GLOB VCPKG_DLLS "${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/bin/*.dll")
+    add_custom_command(TARGET McGuffin POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different ${VCPKG_DLLS} ${CMAKE_SOURCE_DIR}/cacert.pem $<TARGET_FILE_DIR:McGuffin>)
+endif()
