@@ -1,0 +1,12 @@
+{
+  "name": "mcguffin",
+  "version-string": "1.0",
+  "builtin-baseline": "bd8298ae219367a606c74c6c25dc50cc6d66eca8",
+  "dependencies": [
+    { "name": "boost-asio", "features": ["ssl"] },
+    "boost-beast",
+    "boost-json",
+    "openssl",
+    "libpsl"
+  ]
+}
