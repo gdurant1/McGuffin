@@ -1,4 +1,5 @@
 #include "graph.h"
+#include "crawler.h"
 
 #include <queue>
 #include <stack>
@@ -26,7 +27,7 @@ void WebsiteGraph::reset(const std::string& startUrl, int maxDepth,
         throw std::invalid_argument("Start URL must be nonempty, depth >= 0, nodes >= 1");
     nodes_.clear();
     std::string root = withoutFragment(startUrl);
-    nodes_.emplace(root, GraphNode{root, 0, {}});
+    nodes_.emplace(root, GraphNode{root, 0, {}, {}, 0, ""});
 }
 
 void WebsiteGraph::addLinks(const std::string& source,
@@ -42,7 +43,7 @@ void WebsiteGraph::addLinks(const std::string& source,
         if (!unique.insert(link).second) continue;
         if (!nodes_.contains(link)) {
             if (nodes_.size() == maxNodes) continue;
-            nodes_.emplace(link, GraphNode{link, -1, {}});
+            nodes_.emplace(link, GraphNode{link, -1, {}, {}, 0, ""});
         }
         nodes_.at(source).outgoing.push_back(link);
     }
@@ -117,3 +118,65 @@ void WebsiteGraph::crawlDFS(const std::string& startUrl, const LinkFetcher& fetc
     updateShortestDistances(root);
 }
 
+// every page on part 1's graph becomes a node keyed by its fetch url; links keep their weight
+void WebsiteGraph::loadFromCrawler(crawler& source, bool skipNavigation) {
+    nodes_.clear();
+    for (const auto& [id, page] : source.getPages()) {
+        if (source.isOnGraph(id)) {
+            const char* names[] = {"queued", "fetched", "failed", "unfetched", "tooLarge", "nonHtml"};
+            nodes_.emplace(page.fetchUrl, GraphNode{page.fetchUrl, -1, {}, {}, 0, names[(int)page.status]});
+        }
+    }
+    for (const auto& [key, edge] : source.getEdges()) {
+        if (!source.isOnGraph(edge.from) || !source.isOnGraph(edge.to) || (skipNavigation && edge.navigationByLocation)) {
+            continue;
+        }
+        const std::string& from = source.getPages().at(edge.from).fetchUrl;
+        const std::string& to = source.getPages().at(edge.to).fetchUrl;
+        nodes_.at(from).outgoing.push_back(to);
+        nodes_.at(from).weights.push_back(edge.weight);
+        nodes_.at(to).incoming += edge.weight;
+    }
+}
+
+// breadth-first over the loaded graph; returns pages in visit order
+std::vector<std::string> WebsiteGraph::bfs(const std::string& startUrl, int maxDepth) {
+    if (!nodes_.contains(startUrl))
+        throw std::invalid_argument("start url is not in the loaded graph: " + startUrl);
+    std::vector<std::string> order;
+    std::queue<std::pair<std::string, int>> pending;
+    std::unordered_set<std::string> queued{startUrl};
+    pending.push({startUrl, 0});
+    while (!pending.empty()) {
+        auto [current, depth] = pending.front(); pending.pop();
+        order.push_back(current);
+        if (depth >= maxDepth) continue;
+        for (const auto& neighbor : nodes_.at(current).outgoing) {
+            if (queued.insert(neighbor).second) pending.push({neighbor, depth + 1});
+        }
+    }
+    updateShortestDistances(startUrl);
+    return order;
+}
+
+// depth-first over the loaded graph; returns pages in visit order
+std::vector<std::string> WebsiteGraph::dfs(const std::string& startUrl, int maxDepth) {
+    if (!nodes_.contains(startUrl))
+        throw std::invalid_argument("start url is not in the loaded graph: " + startUrl);
+    std::vector<std::string> order;
+    std::stack<std::pair<std::string, int>> pending;
+    std::unordered_set<std::string> visited;
+    pending.push({startUrl, 0});
+    while (!pending.empty()) {
+        auto [current, depth] = pending.top(); pending.pop();
+        if (!visited.insert(current).second) continue;
+        order.push_back(current);
+        if (depth >= maxDepth) continue;
+        const auto& outgoing = nodes_.at(current).outgoing;
+        for (auto it = outgoing.rbegin(); it != outgoing.rend(); ++it) {
+            if (!visited.contains(*it)) pending.push({*it, depth + 1});
+        }
+    }
+    updateShortestDistances(startUrl);
+    return order;
+}
