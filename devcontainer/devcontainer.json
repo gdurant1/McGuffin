@@ -1,0 +1,23 @@
+{
+  "name": "McGuffin",
+  "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04",
+
+  // runs once when the codespace is created (and during prebuilds, if enabled)
+  "onCreateCommand": "bash .devcontainer/setup.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cmake-tools"
+      ],
+      "settings": {
+        "cmake.generator": "Ninja",
+        "cmake.buildDirectory": "${workspaceFolder}/build",
+        "cmake.configureSettings": {
+          "CMAKE_TOOLCHAIN_FILE": "${env:HOME}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+        }
+      }
+    }
+  }
+}
