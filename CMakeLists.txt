@@ -10,9 +10,28 @@ find_package(OpenSSL REQUIRED)
 find_path(PSL_INCLUDE_DIR libpsl.h REQUIRED)
 find_library(PSL_LIBRARY NAMES psl REQUIRED)
 
+# libpsl's own dependencies: needed when libpsl is a static library (Linux),
+# harmless when it's a DLL (Windows); order matters: psl -> idn2 -> unistring -> iconv
+find_library(IDN2_LIBRARY NAMES idn2)
+find_library(UNISTRING_LIBRARY NAMES unistring)
+find_library(ICONV_LIBRARY NAMES iconv)   # glibc usually provides iconv itself
+set(PSL_DEPENDENCIES "")
+foreach(lib IN ITEMS IDN2_LIBRARY UNISTRING_LIBRARY ICONV_LIBRARY)
+    if(${lib})
+        list(APPEND PSL_DEPENDENCIES ${${lib}})
+    endif()
+endforeach()
+
 add_executable(McGuffin main.cpp crawler.cpp dnsResolver.cpp extractor.cpp fetch.cpp urlStandard.cpp graph.cpp)
 target_include_directories(McGuffin PRIVATE ${PSL_INCLUDE_DIR})
-target_link_libraries(McGuffin PRIVATE Boost::asio Boost::beast Boost::json OpenSSL::SSL OpenSSL::Crypto ${PSL_LIBRARY})
+target_link_libraries(McGuffin PRIVATE Boost::asio Boost::beast Boost::json OpenSSL::SSL OpenSSL::Crypto
+        ${PSL_LIBRARY} ${PSL_DEPENDENCIES})
+
+# linux: asio needs threads, openssl needs dl
+if(UNIX)
+    find_package(Threads REQUIRED)
+    target_link_libraries(McGuffin PRIVATE Threads::Threads ${CMAKE_DL_LIBS})
+endif()
 
 # windows: target windows 10 and link the socket and crypto system libraries
 if(WIN32)
