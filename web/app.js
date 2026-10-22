@@ -4,10 +4,14 @@ const settings = {
     maxUnfetched: 100,  // most-linked unfetched pages to include
     maxLinks: 4000,     // heaviest links drawn at the start; the rest appear when a search uses them
     maxSteps: 400,      // longest search animation, in steps (big searches color several links per step)
+    warnPages: 2000,    // more pages than this shows a "may be slow" warning before a run
+    warnLinks: 20000,   // more links than this shows the same warning
     skipNavigation: true
 };
 // line color by weight tier: light yellow (weight 1) to dark red (257+)
 const tierColors = ["#f6c343", "#f2ae3b", "#ee9835", "#e9802f", "#e1672a", "#d34f26", "#c03b23", "#a62a20", "#88191c", "#6a0f17"];
+// node color by hops from the start: light purple (1) to dark purple (6+)
+const hopColors = ["#c9c1f7", "#ab9ff0", "#8d7de6", "#6f5bd9", "#5241bf", "#372a8f"];
 const waveColors = ["#e34948", "#eb6834", "#eda100", "#1baf7a", "#2a78d6", "#6250d6", "#e87ba4"];
 
 // colors come from style.css so light and dark themes both work
@@ -27,6 +31,7 @@ let timers = [];
 let lastTap = { id: null, time: 0 };
 let simulation = null;
 let crawlInfo = {};
+let hops = new Map();           // page id -> links from the start, for the current run
 
 const svg = d3.select("#graph");
 const zoomLayer = svg.append("g");
@@ -186,7 +191,7 @@ function revealNode(node, near) {
         node.vy = 0;
     }
     node.revealed = true;
-    d3.select(node.element).classed("lone", false);
+    d3.select(node.element).classed("lone", false).classed("found", true);
 }
 
 function revealLink(link) {
@@ -196,6 +201,23 @@ function revealLink(link) {
     revealNode(to, from);
     link.revealed = true;
     ensureLine(link);
+    link.element.classList.add("found");
+}
+
+// discovery mode: only start and end show at first; the rest appears as the algorithm finds it
+function enterDiscovery() {
+    exitDiscovery();
+    if (!document.getElementById("hideUntilFound").checked) return;
+    document.getElementById("graph").classList.add("discover");
+    for (const id of [startId, endId]) {
+        if (id !== null) nodeById.get(id).element.classList.add("found");
+    }
+}
+
+// back to the full graph (used by clear, a new run and loading a file)
+function exitDiscovery() {
+    document.getElementById("graph").classList.remove("discover");
+    document.querySelectorAll("#graph .found").forEach(element => element.classList.remove("found"));
 }
 
 // remove lines and nodes that a search revealed
@@ -270,7 +292,8 @@ function render() {
 
 function showTooltip(event, n) {
     const box = document.getElementById("graphBox").getBoundingClientRect();
-    tooltip.textContent = n.key + "\n" + n.status + ", depth " + n.depth + ", " + n.incoming + " incoming links\nright-click to focus";
+    const away = hops.has(n.id) ? "\n" + hops.get(n.id) + " links from start" : "";
+    tooltip.textContent = n.key + "\n" + n.status + ", depth " + n.depth + ", " + n.incoming + " incoming links" + away + "\nright-click to focus";
     tooltip.hidden = false;
     tooltip.style.left = Math.min(event.clientX - box.left + 12, box.width - tooltip.offsetWidth - 6) + "px";
     tooltip.style.top = (event.clientY - box.top + 12) + "px";
@@ -387,10 +410,18 @@ function markEndpoints() {
     });
 }
 
+// table headings change between a path and a spanning tree
+function setTableHead(labels) {
+    document.getElementById("pathHead").innerHTML = labels.map((label, i) =>
+        `<th class="${i === 1 ? "" : "num"}">${label}</th>`).join("");
+}
+
 // one row per page on the path, from start to end
 function showPathTable(path) {
     const body = document.getElementById("pathBody");
     body.innerHTML = "";
+    setTableHead(["#", "Page", "Link weight", "Page weight"]);
+    document.getElementById("tableNote").textContent = "Link weight = number of links from the page above. Page weight = all incoming links to the page.";
     if (path.length === 0) {
         document.getElementById("pathSummary").textContent = "No path between start and end.";
         return;
@@ -489,6 +520,37 @@ function flashNode(id, step, stepMs) {
         .attr("fill", nodeColor(node));
 }
 
+// shortest number of links from the start to every page it can reach
+function computeHops(start, twoWay) {
+    const result = new Map([[start, 0]]);
+    const queue = [start];
+    for (let head = 0; head < queue.length; head++) {
+        const node = nodeById.get(queue[head]);
+        const next = node.out.map(l => l.to);
+        if (twoWay) node.in.forEach(l => next.push(l.from));
+        for (const id of next) {
+            if (!result.has(id)) {
+                result.set(id, result.get(queue[head]) + 1);
+                queue.push(id);
+            }
+        }
+    }
+    return result;
+}
+
+// purple by hops; the start keeps its own color, pages the start can't reach use the fallback
+function hopFill(id, fallback) {
+    if (!hops.has(id)) return fallback;
+    const away = hops.get(id);
+    return away === 0 ? nodeColor(nodeById.get(id)) : hopColors[Math.min(away, hopColors.length) - 1];
+}
+
+// a found line keeps its weight color, drawn thicker and solid
+function showFoundLink(link) {
+    revealLink(link);
+    d3.select(link.element).attr("stroke", linkColor(link)).attr("stroke-width", linkWidth(link) + 1.2).attr("stroke-opacity", 1);
+}
+
 // each search returns the links it explored (in order) and the path it found
 function searchBfs(start, end) {
     const explored = [];
@@ -573,6 +635,205 @@ function tracePath(parent, end) {
     return path;
 }
 
+// one row per tree link, strongest first, with a running total
+function showTreeTable(tree, treeCount) {
+    const body = document.getElementById("pathBody");
+    body.innerHTML = "";
+    setTableHead(["#", "Link", "Weight", "Total"]);
+    document.getElementById("tableNote").textContent = "Weight = links in both directions added together. Total = weight of the tree so far.";
+    let total = 0;
+    tree.forEach((edge, i) => {
+        total += edge.weight;
+        const tr = document.createElement("tr");
+        const cells = [i + 1, nodeById.get(edge.a).key + "  \u2194  " + nodeById.get(edge.b).key, edge.weight, total];
+        cells.forEach((value, c) => {
+            const td = document.createElement("td");
+            td.className = c === 1 ? "page" : "num";
+            td.textContent = value;
+            tr.appendChild(td);
+        });
+        body.appendChild(tr);
+    });
+    document.getElementById("pathSummary").textContent = tree.length + " links in the tree, total weight " + total + ". "
+        + (treeCount > 1 ? treeCount + " separate trees (pages that can't reach each other)." : "One tree connects every page.");
+}
+
+// links as two-way connections: a->b and b->a become one edge with their weights added
+function undirectedEdges() {
+    const byPair = new Map();
+    for (const l of allLinks) {
+        const a = Math.min(l.from, l.to);
+        const b = Math.max(l.from, l.to);
+        let edge = byPair.get(a + "-" + b);
+        if (!edge) {
+            edge = { a, b, weight: 0, links: [] };
+            byPair.set(a + "-" + b, edge);
+        }
+        edge.weight += l.weight;
+        edge.links.push(l);
+    }
+    return [...byPair.values()];
+}
+
+// kruskal: strongest edges first; an edge that would close a loop is rejected
+function treeKruskal() {
+    const edges = undirectedEdges().sort((x, y) => y.weight - x.weight);
+    const parent = new Map(nodes.map(n => [n.id, n.id]));
+    const find = id => {
+        while (parent.get(id) !== id) {
+            parent.set(id, parent.get(parent.get(id)));
+            id = parent.get(id);
+        }
+        return id;
+    };
+    const events = [];
+    const tree = [];
+    for (const edge of edges) {
+        if (tree.length === nodes.length - 1) break;
+        const rootA = find(edge.a);
+        const rootB = find(edge.b);
+        if (rootA === rootB) {
+            events.push({ edge, accepted: false });
+            continue;
+        }
+        parent.set(rootA, rootB);
+        tree.push(edge);
+        events.push({ edge, accepted: true });
+    }
+    return { events, tree, treeCount: nodes.length - tree.length };
+}
+
+// prim: grow from the start node, always taking the strongest edge that reaches a new page
+function treePrim(start) {
+    const adjacent = new Map(nodes.map(n => [n.id, []]));
+    for (const edge of undirectedEdges()) {
+        adjacent.get(edge.a).push(edge);
+        adjacent.get(edge.b).push(edge);
+    }
+    const heap = [];
+    const push = edge => {
+        heap.push(edge);
+        let i = heap.length - 1;
+        while (i > 0 && heap[(i - 1) >> 1].weight < heap[i].weight) {
+            [heap[i], heap[(i - 1) >> 1]] = [heap[(i - 1) >> 1], heap[i]];
+            i = (i - 1) >> 1;
+        }
+    };
+    const pop = () => {
+        const top = heap[0];
+        const last = heap.pop();
+        if (heap.length > 0) {
+            heap[0] = last;
+            let i = 0;
+            while (true) {
+                let big = i;
+                for (const child of [2 * i + 1, 2 * i + 2]) {
+                    if (child < heap.length && heap[child].weight > heap[big].weight) big = child;
+                }
+                if (big === i) break;
+                [heap[i], heap[big]] = [heap[big], heap[i]];
+                i = big;
+            }
+        }
+        return top;
+    };
+    const inTree = new Set([start]);
+    adjacent.get(start).forEach(push);
+    const events = [];
+    const tree = [];
+    while (heap.length > 0) {
+        const edge = pop();
+        const next = !inTree.has(edge.a) ? edge.a : !inTree.has(edge.b) ? edge.b : null;
+        if (next === null) {
+            events.push({ edge, accepted: false });
+            continue;
+        }
+        inTree.add(next);
+        tree.push(edge);
+        events.push({ edge, accepted: true });
+        adjacent.get(next).forEach(e => { if (!inTree.has(e.a) || !inTree.has(e.b)) push(e); });
+    }
+    return { events, tree, treeCount: 1, reached: inTree.size };
+}
+
+// accepted edges turn green as they join the tree; rejected ones flash gray
+function runTree(algorithm) {
+    if (algorithm === "prim" && startId === null) {
+        setResult("Prim grows from the start node: press Select Start and pick one first.");
+        return;
+    }
+    clearAnimation();
+    hideRevealed();
+    enterDiscovery();
+    hops = startId === null ? new Map() : computeHops(startId, true);
+    const result = algorithm === "prim" ? treePrim(startId) : treeKruskal();
+    const stepMs = Number(document.getElementById("speed").value);
+    const perStep = Math.max(1, Math.ceil(result.events.length / settings.maxSteps));
+    const steps = Math.ceil(result.events.length / perStep);
+
+    for (let s = 0; s < steps; s++) {
+        later(s * stepMs, () => {
+            for (const { edge, accepted } of result.events.slice(s * perStep, (s + 1) * perStep)) {
+                if (accepted) {
+                    for (const link of edge.links) {
+                        showFoundLink(link);
+                        d3.select(link.element).raise();
+                    }
+                    d3.select(nodeById.get(edge.a).element).attr("fill", hopFill(edge.a, css("--path")));
+                    d3.select(nodeById.get(edge.b).element).attr("fill", hopFill(edge.b, css("--path")));
+                }
+                else {
+                    for (const link of edge.links.filter(l => l.element)) {
+                        link.element.classList.add("flash");
+                        d3.select(link.element).interrupt().attr("stroke", css("--unfetched")).attr("stroke-opacity", 1)
+                            .transition().duration(500).attr("stroke", linkColor(link)).attr("stroke-opacity", 0.85)
+                            .on("end", () => link.element && link.element.classList.remove("flash"));
+                    }
+                }
+            }
+        });
+    }
+    later(steps * stepMs + 200, () => {
+        markEndpoints();
+        showTreeTable(result.tree, result.treeCount);
+        renderStats(crawlInfo);
+        const total = result.tree.reduce((sum, edge) => sum + edge.weight, 0);
+        let text = "Strongest-link tree: " + result.tree.length + " links, total weight " + total + ".";
+        if (algorithm === "prim" && result.reached < nodes.length) {
+            text += " It reaches " + result.reached + " of " + nodes.length + " pages; the rest aren't connected to the start.";
+        }
+        setResult(text);
+    });
+    setResult("Running " + document.getElementById("algorithm").selectedOptions[0].text + "...");
+}
+
+// big graphs: show a warning with an estimate and wait for "Run anyway"
+function confirmLarge(action) {
+    const box = document.getElementById("warning");
+    if (nodes.length <= settings.warnPages && allLinks.length <= settings.warnLinks) {
+        box.hidden = true;
+        action();
+        return;
+    }
+    const stepMs = Number(document.getElementById("speed").value);
+    const seconds = Math.ceil(settings.maxSteps * stepMs / 1000 + allLinks.length / 20000);
+    document.getElementById("warningText").textContent = "This may be slow (about " + seconds + " seconds): "
+        + nodes.length.toLocaleString() + " pages and " + allLinks.length.toLocaleString() + " links.";
+    box.hidden = false;
+    document.getElementById("runAnyway").onclick = () => { box.hidden = true; action(); };
+    document.getElementById("cancelRun").onclick = () => { box.hidden = true; };
+}
+
+function runSelected() {
+    const algorithm = document.getElementById("algorithm").value;
+    if (algorithm === "kruskal" || algorithm === "prim") {
+        confirmLarge(() => runTree(algorithm));
+    }
+    else {
+        confirmLarge(runSearch);
+    }
+}
+
 // color explored links step by step (hidden ones appear as they are reached), then draw the path
 function runSearch() {
     if (startId === null || endId === null) {
@@ -581,6 +842,8 @@ function runSearch() {
     }
     clearAnimation();
     hideRevealed();
+    enterDiscovery();
+    hops = computeHops(startId, document.getElementById("twoWay").checked);
     const algorithm = document.getElementById("algorithm").value;
     const search = { bfs: searchBfs, dfs: searchDfs, dijkstra: searchDijkstra }[algorithm];
     const result = search(startId, endId);
@@ -591,9 +854,9 @@ function runSearch() {
     for (let s = 0; s < steps; s++) {
         later(s * stepMs, () => {
             for (const link of result.explored.slice(s * perStep, (s + 1) * perStep)) {
-                revealLink(link);
-                d3.select(link.element).attr("stroke", css("--explored")).attr("stroke-opacity", 1);
-                d3.select(nodeById.get(link.to).element).attr("fill", css("--explored"));
+                showFoundLink(link);
+                d3.select(nodeById.get(link.from).element).attr("fill", hopFill(link.from, css("--explored")));
+                d3.select(nodeById.get(link.to).element).attr("fill", hopFill(link.to, css("--explored")));
             }
         });
     }
@@ -639,6 +902,8 @@ function loadFile(file) {
 
 function show(raw, fileName) {
     clearAnimation();
+    exitDiscovery();
+    hops = new Map();
     focusId = null;
     pickMode = null;
     startId = null;
@@ -675,10 +940,12 @@ document.getElementById("search").addEventListener("change", e => {
     else if (found) document.getElementById("pickNote").textContent = "Press Select Start or Select end first, then pick the page again.";
 });
 document.getElementById("speed").addEventListener("input", e => { document.getElementById("speedLabel").textContent = e.target.value + " ms"; });
-document.getElementById("run").addEventListener("click", runSearch);
+document.getElementById("run").addEventListener("click", runSelected);
 document.getElementById("clear").addEventListener("click", () => {
     clearAnimation();
     hideRevealed();
+    exitDiscovery();
+    hops = new Map();
     setResult("");
     showPathTable([]);
     renderStats(crawlInfo);

@@ -469,3 +469,34 @@ circle.lone {
 #graph line.hot {
     stroke-opacity: 1;
 }
+
+/* "may be slow" notice before a big run */
+.warning {
+    display: grid;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid color-mix(in srgb, var(--other) 60%, transparent);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--other) 14%, var(--surface));
+    font-size: 13px;
+}
+
+/* discovery mode: everything hidden except what the algorithm has found */
+#graph.discover circle:not(.found),
+#graph.discover line:not(.found):not(.flash) {
+    display: none;
+}
+
+.check-line {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* hops key: light purple (1 link from start) to dark purple (6+) */
+.legend i.hop-bar {
+    width: 70px;
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #c9c1f7, #8d7de6, #5241bf, #372a8f);
+}

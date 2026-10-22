@@ -34,12 +34,12 @@
             <div class="table-wrap">
                 <table>
                     <thead>
-                    <tr><th class="num">#</th><th>Page</th><th class="num">Link weight</th><th class="num">Page weight</th></tr>
+                    <tr id="pathHead"><th class="num">#</th><th>Page</th><th class="num">Link weight</th><th class="num">Page weight</th></tr>
                     </thead>
                     <tbody id="pathBody"></tbody>
                 </table>
             </div>
-            <p class="small">Link weight = number of links from the page above. Page weight = all incoming links to the page.</p>
+            <p class="small" id="tableNote">Link weight = number of links from the page above. Page weight = all incoming links to the page.</p>
         </aside>
 
         <div class="right">
@@ -50,7 +50,7 @@
                         <span><i style="background:var(--fetched)"></i>Fetched</span>
                         <span><i style="background:var(--failed)"></i>Failed</span>
                         <span><i style="background:var(--unfetched)"></i>Unfetched</span>
-                        <span><i style="background:var(--explored)"></i>Explored</span>
+                        <span class="ramp">Hops from start <b>1</b><i class="hop-bar"></i><b>6+</b></span>
                         <span><i style="background:var(--path)"></i>Path</span>
                         <span class="ramp">Line weight <b>1</b><i class="ramp-bar"></i><b>257+</b></span>
                     </div>
@@ -94,14 +94,25 @@
                             <option value="bfs">Breadth-first search (fewest links)</option>
                             <option value="dfs">Depth-first search</option>
                             <option value="dijkstra">Dijkstra (strongest links)</option>
+                            <option value="kruskal">Kruskal (strongest-link spanning tree)</option>
+                            <option value="prim">Prim (strongest-link spanning tree from start)</option>
                         </select>
                         <label for="speed" class="small">Speed <span class="mono" id="speedLabel">60 ms</span> per step</label>
                         <input id="speed" type="range" min="10" max="400" step="10" value="60">
+                        <label class="small check-line" for="hideUntilFound"><input id="hideUntilFound" type="checkbox" checked> Hide pages until found (Clear shows the full graph again)</label>
                         <div class="controls">
                             <button class="btn primary" id="run" type="button">Run</button>
                             <button class="btn" id="clear" type="button">Clear</button>
                         </div>
+                        <div class="warning" id="warning" hidden>
+                            <p id="warningText"></p>
+                            <div class="controls">
+                                <button class="btn primary" id="runAnyway" type="button">Run anyway</button>
+                                <button class="btn" id="cancelRun" type="button">Cancel</button>
+                            </div>
+                        </div>
                         <p class="small" id="result"></p>
+                        <p class="small">Paths need a start and an end. Kruskal needs neither; Prim needs a start. Spanning trees treat links as two-way.</p>
                     </div>
                 </div>
             </section>
