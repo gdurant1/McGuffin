@@ -1,29 +1,24 @@
-# McGuffin — Files
+# McGuffin
 
-## web crawler
+## Files
 
 | File | What it does |
 |---|---|
-| `main.cpp` | Runs the crawler: takes the seed url (argument or prompt) and an optional output folder, then prints every url found. |
+| `main.cpp` | Runs the program: takes the seed url (argument or prompt) and an optional output folder, crawls, prints every url found, then runs BFS and DFS and lists the most-linked pages. |
 | `url.h` | Splits a url into its parts (scheme, host, port, path, query, fragment) and checks for links that are always skipped. |
 | `urlStandard.h` / `urlStandard.cpp` | Normalizes every link into one standard key, so the same page is never stored twice, and finds each host's site with libpsl. |
 | `dnsResolver.h` / `dnsResolver.cpp` | Looks up a host's IPv4 and IPv6 addresses with the Asio resolver and caches them. |
 | `fetch.h` / `fetch.cpp` | Downloads a page over `tcp_stream` (http) or `ssl_stream` over `tcp_stream` (https), follows redirects, checks certificates, and reports what happened. |
 | `extractor.h` / `extractor.cpp` | Reads a page with readlib's `readline(stream, '<')` and returns the links to other pages, plus `<base>`, meta refresh and a hashable body. |
 | `crawler.h` / `crawler.cpp` | Schedules fetches, builds the link graph (pages, weighted edges, merges), saves it as JSON with a log, and returns the list of fetch urls. |
+| `graph.h` | Declares `WebsiteGraph`, `GraphNode` (with link weights, incoming weight and status) and the `LinkFetcher` callback. |
+| `graph.cpp` | Loads the finished crawl into `WebsiteGraph`, runs BFS and DFS over it, and finds shortest distances from the start url; also keeps the original fetch-as-you-go `crawlBFS` and `crawlDFS`. |
+| `graph_demo.cpp` | Test program for `WebsiteGraph` with a fake site; has its own `main` and must be built with the crawler files. |
 | `read.h` | readlib, copied from https://github.com/ShakaUVM/read; used by the extractor. |
 | `cacert.pem` | Bundled trusted certificates, used when the system certificate store isn't available (needed on Windows). |
-| `data/` | Default output folder for each crawl's `.json` and `.log` files (not committed). |
-| `graph.cpp` | Runs the BFS and DFS crawls, adds each page's links, and finds shortest distances from the start url. |
-| `graph.h` | Declares `WebsiteGraph`, `GraphNode` and the `LinkFetcher` callback the crawler provides. |
-| `graph_demo.cpp` | Test program for `WebsiteGraph` with a fake site; has its own `main`. |
-
-## Build files
-
-| File | What it does |
-|---|---|
 | `CMakeLists.txt` | Builds `McGuffin` (C++23); on Windows it also copies the vcpkg DLLs and `cacert.pem` next to the exe. |
 | `vcpkg.json` | Library list for vcpkg: Boost (Asio, Beast, JSON), OpenSSL and libpsl. |
+| `data/` | Default output folder for each crawl's `.json` and `.log` files (not committed). |
 
 ## Get the code from GitHub
 
@@ -40,7 +35,7 @@ Then follow one of the two sections below.
    `-DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-mingw-dynamic -DVCPKG_HOST_TRIPLET=x64-mingw-dynamic`
 3. Reload CMake. The first load builds the libraries and takes about 30 minutes.
 4. In Run → Edit Configurations → McGuffin, set the working directory to `$ProjectFileDir$`. Program arguments are the seed url, for example `https://site.com/`, and an optional output folder.
-5. Build and run. The urls print when the crawl ends; progress goes to `data/<seed>.log`.
+5. Build and run. The urls, BFS/DFS counts and most-linked pages print when the crawl ends; progress goes to `data/<seed>.log`.
 
 ## Build and run (GitHub Codespaces or Linux)
 
