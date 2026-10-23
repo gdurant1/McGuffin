@@ -1,0 +1,19 @@
+{
+  "packages": [
+{
+  "SPDXID" : "SPDXRef-resource-0",
+  "checksums" : 
+  [
+    {
+      "algorithm" : "SHA512",
+      "checksumValue" : "e25986ffa330706068ba38f69f42e25d4ddf4ea3b8240f934f6dbef3bd4d63d380fb63cf6a843e92793378588706d0f0564d7a2474f6d1e36c87e5579b8c4f9b"
+    }
+  ],
+  "copyrightText" : "NOASSERTION",
+  "downloadLocation" : "git+https://github.com/boostorg/winapi@boost-1.92.0",
+  "licenseConcluded" : "NOASSERTION",
+  "licenseDeclared" : "NOASSERTION",
+  "name" : "boostorg/winapi"
+}
+  ]
+}

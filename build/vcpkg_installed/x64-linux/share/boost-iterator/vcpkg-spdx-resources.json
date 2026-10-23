@@ -1,0 +1,19 @@
+{
+  "packages": [
+{
+  "SPDXID" : "SPDXRef-resource-0",
+  "checksums" : 
+  [
+    {
+      "algorithm" : "SHA512",
+      "checksumValue" : "ed5b074e5623ec20aea2bf5e4169564cc53c813a7e6379f774d21315853cb0b6e3105826c31acb388b0c354d4580b1a35c1b1f3cb743d6fbfcdd572c69d31ade"
+    }
+  ],
+  "copyrightText" : "NOASSERTION",
+  "downloadLocation" : "git+https://github.com/boostorg/iterator@boost-1.92.0",
+  "licenseConcluded" : "NOASSERTION",
+  "licenseDeclared" : "NOASSERTION",
+  "name" : "boostorg/iterator"
+}
+  ]
+}

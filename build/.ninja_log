@@ -1,0 +1,9 @@
+# ninja log v5
+2	8089	1792774922181468970	CMakeFiles/McGuffin.dir/main.cpp.o	3a16d68af3cad6d9
+4	8614	1792774922698468978	CMakeFiles/McGuffin.dir/dnsResolver.cpp.o	3b0b61385772c785
+8098	9658	1792774923753468992	CMakeFiles/McGuffin.dir/extractor.cpp.o	75aeb6ef7869b9c6
+9660	11217	1792774925312469014	CMakeFiles/McGuffin.dir/urlStandard.cpp.o	e101dd5dded18537
+3	14229	1792774928300469056	CMakeFiles/McGuffin.dir/crawler.cpp.o	5b472066ece06821
+11220	17690	1792774931783469105	CMakeFiles/McGuffin.dir/graph.cpp.o	c98baf5bdda8b8b6
+8615	29631	1792774943678469271	CMakeFiles/McGuffin.dir/fetch.cpp.o	82957d43581fae81
+29633	30794	1792774944870469288	McGuffin	50773c17f78e2cb4

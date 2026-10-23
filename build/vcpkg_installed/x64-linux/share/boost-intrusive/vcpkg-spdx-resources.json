@@ -1,0 +1,19 @@
+{
+  "packages": [
+{
+  "SPDXID" : "SPDXRef-resource-0",
+  "checksums" : 
+  [
+    {
+      "algorithm" : "SHA512",
+      "checksumValue" : "0354336128e7547e8bec8d1ec9f91e03bd36531af416e58cbea8778d363eebf4040a8a78d46166676fd40637818b517758fba436847a0a4655a7a2e0d4204203"
+    }
+  ],
+  "copyrightText" : "NOASSERTION",
+  "downloadLocation" : "git+https://github.com/boostorg/intrusive@boost-1.92.0",
+  "licenseConcluded" : "NOASSERTION",
+  "licenseDeclared" : "NOASSERTION",
+  "name" : "boostorg/intrusive"
+}
+  ]
+}

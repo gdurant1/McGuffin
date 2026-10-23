@@ -1,0 +1,19 @@
+{
+  "packages": [
+{
+  "SPDXID" : "SPDXRef-resource-0",
+  "checksums" : 
+  [
+    {
+      "algorithm" : "SHA512",
+      "checksumValue" : "05c9c3461a4ffdb37373a7bc542c9cf0433e5cba3870ab36a53fbea65d85488a20a6a55ba1a91a0c96dddb010614aed82593e692867734e2412e5e353ae0f9de"
+    }
+  ],
+  "copyrightText" : "NOASSERTION",
+  "downloadLocation" : "git+https://github.com/boostorg/fusion@boost-1.92.0",
+  "licenseConcluded" : "NOASSERTION",
+  "licenseDeclared" : "NOASSERTION",
+  "name" : "boostorg/fusion"
+}
+  ]
+}

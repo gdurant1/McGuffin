@@ -1,0 +1,19 @@
+{
+  "packages": [
+{
+  "SPDXID" : "SPDXRef-resource-0",
+  "checksums" : 
+  [
+    {
+      "algorithm" : "SHA512",
+      "checksumValue" : "9660b986c164597d571c0acbf5b2de98f8c3876b748a7053c32ad04bfd5e2e6d2f216edeec9f92298522ea7004fd0911bfbc75e868fa9e22a949821dc7378442"
+    }
+  ],
+  "copyrightText" : "NOASSERTION",
+  "downloadLocation" : "git+https://github.com/boostorg/asio@boost-1.92.0",
+  "licenseConcluded" : "NOASSERTION",
+  "licenseDeclared" : "NOASSERTION",
+  "name" : "boostorg/asio"
+}
+  ]
+}

@@ -1,0 +1,1153 @@
+A suitable version of cmake was not found (required v4.4.3).
+Downloading https://github.com/Kitware/CMake/releases/download/v4.4.3/cmake-4.4.3-linux-x86_64.tar.gz -> cmake-4.4.3-linux-x86_64.tar.gz
+Successfully downloaded cmake-4.4.3-linux-x86_64.tar.gz
+Extracting cmake...
+Detecting compiler hash for triplet x64-linux...
+Compiler found: /usr/bin/c++
+The following packages will be built and installed:
+  * boost-algorithm:x64-linux@1.92.0
+  * boost-align:x64-linux@1.92.0
+  * boost-array:x64-linux@1.92.0
+    boost-asio[core,deadline-timer,spawn,ssl]:x64-linux@1.92.0
+  * boost-assert:x64-linux@1.92.0
+    boost-beast:x64-linux@1.92.0
+  * boost-bind:x64-linux@1.92.0
+  * boost-cmake:x64-linux@1.92.0
+  * boost-compat:x64-linux@1.92.0
+  * boost-concept-check:x64-linux@1.92.0
+  * boost-config:x64-linux@1.92.0
+  * boost-container:x64-linux@1.92.0
+  * boost-container-hash:x64-linux@1.92.0
+  * boost-context:x64-linux@1.92.0
+  * boost-conversion:x64-linux@1.92.0
+  * boost-core:x64-linux@1.92.0
+  * boost-date-time:x64-linux@1.92.0
+  * boost-describe:x64-linux@1.92.0
+  * boost-detail:x64-linux@1.92.0
+  * boost-endian:x64-linux@1.92.0
+  * boost-exception:x64-linux@1.92.0
+  * boost-function:x64-linux@1.92.0
+  * boost-function-types:x64-linux@1.92.0
+  * boost-fusion:x64-linux@1.92.0
+  * boost-headers:x64-linux@1.92.0
+  * boost-integer:x64-linux@1.92.0
+  * boost-intrusive:x64-linux@1.92.0
+  * boost-io:x64-linux@1.92.0
+  * boost-iterator:x64-linux@1.92.0
+    boost-json:x64-linux@1.92.0
+  * boost-lexical-cast:x64-linux@1.92.0
+  * boost-logic:x64-linux@1.92.0
+  * boost-move:x64-linux@1.92.0
+  * boost-mp11:x64-linux@1.92.0
+  * boost-mpl:x64-linux@1.92.0
+  * boost-numeric-conversion:x64-linux@1.92.0
+  * boost-optional:x64-linux@1.92.0
+  * boost-pool:x64-linux@1.92.0
+  * boost-predef:x64-linux@1.92.0
+  * boost-preprocessor:x64-linux@1.92.0
+  * boost-range:x64-linux@1.92.0
+  * boost-regex:x64-linux@1.92.0
+  * boost-smart-ptr:x64-linux@1.92.0
+  * boost-static-assert:x64-linux@1.92.0
+  * boost-static-string:x64-linux@1.92.0
+  * boost-system:x64-linux@1.92.0
+  * boost-throw-exception:x64-linux@1.92.0
+  * boost-tokenizer:x64-linux@1.92.0
+  * boost-tuple:x64-linux@1.92.0
+  * boost-type-index:x64-linux@1.92.0
+  * boost-type-traits:x64-linux@1.92.0
+  * boost-typeof:x64-linux@1.92.0
+  * boost-uninstall:x64-linux@1.92.0
+  * boost-unordered:x64-linux@1.92.0
+  * boost-utility:x64-linux@1.92.0
+  * boost-variant2:x64-linux@1.92.0
+  * boost-winapi:x64-linux@1.92.0
+  * libiconv:x64-linux@1.19#1
+  * libidn2:x64-linux@2.3.7#3
+    libpsl[core,libidn2]:x64-linux@0.21.5#1
+  * libunistring:x64-linux@1.2#4
+    openssl:x64-linux@3.6.5#2
+  * vcpkg-boost:x64-linux@2026-08-21
+  * vcpkg-cmake:x64-linux@2025-08-07
+  * vcpkg-cmake-config:x64-linux@2026-07-21
+  * vcpkg-cmake-get-vars:x64-linux@2025-05-29
+  * vcpkg-make:x64-linux@2026-07-09#2
+  * vcpkg-tool-meson:x64-linux@1.12.1
+Additional packages (*) will be modified to complete this operation.
+Restored 0 package(s) from /home/vscode/.cache/vcpkg/archives in 356 us. Use --debug to see more details.
+Installing 1/68 vcpkg-cmake:x64-linux@2025-08-07...
+vcpkg-cmake:x64-linux@2025-08-07 package ABI: 5bc9b3e2f34da5f07eb4128e77b5a566fa3cc8dee6ebcc2037bb5d016ebf8ad8
+Building vcpkg-cmake:x64-linux@2025-08-07...
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake_x64-linux/share/vcpkg-cmake/vcpkg_cmake_configure.cmake
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake_x64-linux/share/vcpkg-cmake/vcpkg_cmake_build.cmake
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake_x64-linux/share/vcpkg-cmake/vcpkg_cmake_install.cmake
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake_x64-linux/share/vcpkg-cmake/vcpkg-port-config.cmake
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake_x64-linux/share/vcpkg-cmake/copyright
+-- Performing post-build validation
+Starting submission of vcpkg-cmake:x64-linux@2025-08-07 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-cmake:x64-linux: 36.2 ms
+Installing 2/68 vcpkg-cmake-get-vars:x64-linux@2025-05-29...
+vcpkg-cmake-get-vars:x64-linux@2025-05-29 package ABI: 8efaeacee956bc25f2ca8dc87bd58fd5962451b089d0ba68eea685b1229af455
+Building vcpkg-cmake-get-vars:x64-linux@2025-05-29...
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/vcpkg_cmake_get_vars.cmake
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/cmake_get_vars
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/cmake_get_vars/CMakeLists.txt
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/cmake-get-vars.cmake.in
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/vcpkg-port-config.cmake
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/copyright
+-- Performing post-build validation
+Starting submission of vcpkg-cmake-get-vars:x64-linux@2025-05-29 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-cmake-get-vars:x64-linux: 36.3 ms
+Completed submission of vcpkg-cmake:x64-linux@2025-08-07 to 1 binary cache(s) in 15.7 ms
+Installing 3/68 vcpkg-cmake-config:x64-linux@2026-07-21...
+vcpkg-cmake-config:x64-linux@2026-07-21 package ABI: 385f780f8deb4f6ee3f065cad3ef36094ab22284ab7b60930b760a978e629962
+Building vcpkg-cmake-config:x64-linux@2026-07-21...
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake-config_x64-linux/share/vcpkg-cmake-config/vcpkg_cmake_config_fixup.cmake
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake-config_x64-linux/share/vcpkg-cmake-config/vcpkg-port-config.cmake
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-cmake-config_x64-linux/share/vcpkg-cmake-config/copyright
+-- Skipping post-build validation due to VCPKG_POLICY_EMPTY_PACKAGE
+Starting submission of vcpkg-cmake-config:x64-linux@2026-07-21 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-cmake-config:x64-linux: 25.5 ms
+Completed submission of vcpkg-cmake-get-vars:x64-linux@2025-05-29 to 1 binary cache(s) in 5.27 ms
+Installing 4/68 openssl:x64-linux@3.6.5#2...
+openssl:x64-linux@3.6.5#2 package ABI: 985a6720c21b5ea0f5e10462ba9fa9d4c9f617bf7c869e7a9837fc0cbaeb3889
+Building openssl:x64-linux@3.6.5#2...
+Downloading https://github.com/openssl/openssl/archive/openssl-3.6.5.tar.gz -> openssl-openssl-openssl-3.6.5.tar.gz
+Successfully downloaded openssl-openssl-openssl-3.6.5.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/openssl-openssl-openssl-3.6.5.tar.gz
+-- Applying patch cmake-config.patch
+-- Applying patch command-line-length.patch
+-- Applying patch script-prefix.patch
+-- Applying patch windows/install-layout.patch
+-- Applying patch windows/install-pdbs.patch
+-- Applying patch windows/install-programs.diff
+-- Applying patch unix/android-cc.patch
+-- Applying patch unix/move-openssldir.patch
+-- Applying patch unix/no-empty-dirs.patch
+-- Applying patch unix/no-static-libs-for-shared.patch
+-- Using source at /home/vscode/vcpkg/buildtrees/openssl/src/nssl-3.6.5-c2a478abe6.clean
+-- Getting CMake variables for x64-linux
+-- Loading CMake variables from /home/vscode/vcpkg/buildtrees/openssl/cmake-get-vars_C_CXX-x64-linux.cmake.log
+openssl requires Linux kernel headers from the system package manager.
+   They can be installed on Alpine systems via `apk add linux-headers`.
+   They can be installed on Ubuntu systems via `apt install linux-libc-dev`.
+
+-- Getting CMake variables for x64-linux-dbg
+-- Getting CMake variables for x64-linux-rel
+-- Configuring x64-linux-dbg
+-- Configuring x64-linux-rel
+-- Building x64-linux-dbg
+-- Installing x64-linux-dbg
+-- Building x64-linux-rel
+-- Installing x64-linux-rel
+-- Fixing pkgconfig file: /home/vscode/vcpkg/packages/openssl_x64-linux/lib/pkgconfig/libcrypto.pc
+-- Fixing pkgconfig file: /home/vscode/vcpkg/packages/openssl_x64-linux/lib/pkgconfig/libssl.pc
+-- Fixing pkgconfig file: /home/vscode/vcpkg/packages/openssl_x64-linux/lib/pkgconfig/openssl.pc
+-- Fixing pkgconfig file: /home/vscode/vcpkg/packages/openssl_x64-linux/debug/lib/pkgconfig/libcrypto.pc
+-- Fixing pkgconfig file: /home/vscode/vcpkg/packages/openssl_x64-linux/debug/lib/pkgconfig/libssl.pc
+-- Fixing pkgconfig file: /home/vscode/vcpkg/packages/openssl_x64-linux/debug/lib/pkgconfig/openssl.pc
+-- Installing: /home/vscode/vcpkg/packages/openssl_x64-linux/share/openssl/usage
+-- Installing: /home/vscode/vcpkg/packages/openssl_x64-linux/share/openssl/copyright
+Downloading https://github.com/NixOS/patchelf/releases/download/0.19.2/patchelf-0.19.2-x86_64.tar.gz -> patchelf-0.19.2-x86_64.tar.gz
+Successfully downloaded patchelf-0.19.2-x86_64.tar.gz
+-- Performing post-build validation
+Starting submission of openssl:x64-linux@3.6.5#2 to 1 binary cache(s) in the background
+Elapsed time to handle openssl:x64-linux: 4.7 min
+Completed submission of vcpkg-cmake-config:x64-linux@2026-07-21 to 1 binary cache(s) in 6.34 ms
+Installing 5/68 vcpkg-boost:x64-linux@2026-08-21...
+vcpkg-boost:x64-linux@2026-08-21 package ABI: 6c29260095be66214f6aba987e3b0725d9feb1efde8ff5edffeb75d55179386c
+Building vcpkg-boost:x64-linux@2026-08-21...
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-boost_x64-linux/share/vcpkg-boost/boost-install.cmake
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-boost_x64-linux/share/vcpkg-boost/vcpkg-port-config.cmake
+-- Installing: /home/vscode/vcpkg/packages/vcpkg-boost_x64-linux/share/vcpkg-boost/copyright
+-- Performing post-build validation
+Starting submission of vcpkg-boost:x64-linux@2026-08-21 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-boost:x64-linux: 47.6 ms
+Installing 6/68 boost-uninstall:x64-linux@1.92.0...
+boost-uninstall:x64-linux@1.92.0 package ABI: 4691e660852621d58132c13a1507b1013d5ce8fb0d769f69c6719d3d8f37b20f
+Building boost-uninstall:x64-linux@1.92.0...
+-- 
+Please use the following command when you need to remove all boost ports/components:
+    "./vcpkg remove boost-uninstall:x64-linux --recurse"
+
+-- Skipping post-build validation due to VCPKG_POLICY_EMPTY_PACKAGE
+Starting submission of boost-uninstall:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-uninstall:x64-linux: 32 ms
+Installing 7/68 boost-cmake:x64-linux@1.92.0...
+boost-cmake:x64-linux@1.92.0 package ABI: 1f9fbeb8adfd45c033dd8f9c9981d8c789e183c7f8d86865b33071caace58b07
+Building boost-cmake:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/cmake/archive/boost-1.92.0.tar.gz -> boostorg-cmake-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-cmake-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-cmake-boost-1.92.0.tar.gz
+-- Applying patch 0001-vcpkg-build.patch
+-- Applying patch 0002-remove-prefix-and-suffix.patch
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-cmake/src/ost-1.92.0-bc5186e78d.clean
+-- Configuring x64-linux
+-- Building x64-linux-dbg
+-- Building x64-linux-rel
+-- Up-to-date: /home/vscode/vcpkg/packages/boost-cmake_x64-linux/share/boost/cmake-build
+-- Installing: /home/vscode/vcpkg/packages/boost-cmake_x64-linux/share/boost/cmake-build/BoostRoot.cmake
+-- Installing: /home/vscode/vcpkg/packages/boost-cmake_x64-linux/share/boost/cmake-build/BoostTestJamfile.cmake
+-- Installing: /home/vscode/vcpkg/packages/boost-cmake_x64-linux/share/boost/cmake-build/BoostInstall.cmake
+-- Installing: /home/vscode/vcpkg/packages/boost-cmake_x64-linux/share/boost/cmake-build/BoostTest.cmake
+-- Installing: /home/vscode/vcpkg/packages/boost-cmake_x64-linux/share/boost/cmake-build/BoostMessage.cmake
+-- Installing: /home/vscode/vcpkg/packages/boost-cmake_x64-linux/share/boost/cmake-build/BoostFetch.cmake
+-- Installing: /home/vscode/vcpkg/packages/boost-cmake_x64-linux/share/boost-cmake/vcpkg-port-config.cmake
+-- Installing: /home/vscode/vcpkg/packages/boost-cmake_x64-linux/share/boost-cmake/usage
+Downloading https://raw.githubusercontent.com/boostorg/boost/refs/tags/boost-1.92.0/LICENSE_1_0.txt -> boost-1.92.0-LICENSE_1_0.txt
+Successfully downloaded boost-1.92.0-LICENSE_1_0.txt
+-- Installing: /home/vscode/vcpkg/packages/boost-cmake_x64-linux/share/boost-cmake/copyright
+-- Performing post-build validation
+Starting submission of boost-cmake:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-cmake:x64-linux: 1.9 s
+Installing 8/68 boost-headers:x64-linux@1.92.0...
+boost-headers:x64-linux@1.92.0 package ABI: 49310679fe5915a2e302b2fc571a9681f0bc3996ff925b5f72e6a711c62401c8
+Building boost-headers:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/headers/archive/boost-1.92.0.tar.gz -> boostorg-headers-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-headers-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-headers-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-headers/src/ost-1.92.0-9805d0a019.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-headers_x64-linux/share/boost-headers/copyright
+-- Performing post-build validation
+Starting submission of boost-headers:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-headers:x64-linux: 934 ms
+Completed submission of openssl:x64-linux@3.6.5#2 to 1 binary cache(s) in 2.8 s
+Completed submission of vcpkg-boost:x64-linux@2026-08-21 to 1 binary cache(s) in 5.25 ms
+Completed submission of boost-uninstall:x64-linux@1.92.0 to 1 binary cache(s) in 4.79 ms
+Completed submission of boost-cmake:x64-linux@1.92.0 to 1 binary cache(s) in 6.47 ms
+Installing 9/68 boost-config:x64-linux@1.92.0...
+boost-config:x64-linux@1.92.0 package ABI: 2a9817470d7b3dd862add52cd0a21883e0735cb732c36bdfdbb95e802ca39ef3
+Building boost-config:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/config/archive/boost-1.92.0.tar.gz -> boostorg-config-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-config-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-config-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-config/src/ost-1.92.0-0c0276f5a9.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-config_x64-linux/share/boost-config/copyright
+-- Performing post-build validation
+Starting submission of boost-config:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-config:x64-linux: 1.2 s
+Completed submission of boost-headers:x64-linux@1.92.0 to 1 binary cache(s) in 5.41 ms
+Installing 10/68 boost-assert:x64-linux@1.92.0...
+boost-assert:x64-linux@1.92.0 package ABI: 9d9074cd81e7277e1f05de951342b749a6a551c00db69963140f7d50df2f960f
+Building boost-assert:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/assert/archive/boost-1.92.0.tar.gz -> boostorg-assert-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-assert-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-assert-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-assert/src/ost-1.92.0-394abe8f17.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-assert_x64-linux/share/boost-assert/copyright
+-- Performing post-build validation
+Starting submission of boost-assert:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-assert:x64-linux: 827 ms
+Completed submission of boost-config:x64-linux@1.92.0 to 1 binary cache(s) in 48.9 ms
+Installing 11/68 boost-throw-exception:x64-linux@1.92.0...
+boost-throw-exception:x64-linux@1.92.0 package ABI: d1efdbf243c9672f4adc10ce1debbe2bdb2687bb3bc4ed7dec5b5247b7796b93
+Building boost-throw-exception:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/throw_exception/archive/boost-1.92.0.tar.gz -> boostorg-throw_exception-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-throw_exception-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-throw_exception-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-throw-exception/src/ost-1.92.0-bd59294578.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-throw-exception_x64-linux/share/boost-throw-exception/copyright
+-- Performing post-build validation
+Starting submission of boost-throw-exception:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-throw-exception:x64-linux: 861 ms
+Completed submission of boost-assert:x64-linux@1.92.0 to 1 binary cache(s) in 7.27 ms
+Installing 12/68 boost-core:x64-linux@1.92.0...
+boost-core:x64-linux@1.92.0 package ABI: ffa24b1c00a0f7f7c6c481aae8a2caa9df846ce8b96597d65cc950a33bccf3b2
+Building boost-core:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/core/archive/boost-1.92.0.tar.gz -> boostorg-core-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-core-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-core-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-core/src/ost-1.92.0-af2156cbbc.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-core_x64-linux/share/boost-core/copyright
+-- Performing post-build validation
+Starting submission of boost-core:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-core:x64-linux: 988 ms
+Completed submission of boost-throw-exception:x64-linux@1.92.0 to 1 binary cache(s) in 7.9 ms
+Installing 13/68 boost-smart-ptr:x64-linux@1.92.0...
+boost-smart-ptr:x64-linux@1.92.0 package ABI: 24601770e40f846b2bc8fe7a71a05838029d1d194e4a64162c5a9ffb2a5da8b4
+Building boost-smart-ptr:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/smart_ptr/archive/boost-1.92.0.tar.gz -> boostorg-smart_ptr-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-smart_ptr-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-smart_ptr-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-smart-ptr/src/ost-1.92.0-bef44995b0.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-smart-ptr_x64-linux/share/boost-smart-ptr/copyright
+-- Performing post-build validation
+Starting submission of boost-smart-ptr:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-smart-ptr:x64-linux: 993 ms
+Completed submission of boost-core:x64-linux@1.92.0 to 1 binary cache(s) in 22.5 ms
+Installing 14/68 boost-predef:x64-linux@1.92.0...
+boost-predef:x64-linux@1.92.0 package ABI: 3a1610b2d7ca36bf5744f375a980d095168e6454ad9b1eabb6b5bfa338c8f219
+Building boost-predef:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/predef/archive/boost-1.92.0.tar.gz -> boostorg-predef-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-predef-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-predef-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-predef/src/ost-1.92.0-26a0b17815.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-predef_x64-linux/share/boost-predef/copyright
+-- Performing post-build validation
+Starting submission of boost-predef:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-predef:x64-linux: 1.3 s
+Completed submission of boost-smart-ptr:x64-linux@1.92.0 to 1 binary cache(s) in 19 ms
+Installing 15/68 boost-winapi:x64-linux@1.92.0...
+boost-winapi:x64-linux@1.92.0 package ABI: 03a486b33c90d3c4ef8cb44597300b9fe972ab0009245d701a8eefa6f7e8a573
+Building boost-winapi:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/winapi/archive/boost-1.92.0.tar.gz -> boostorg-winapi-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-winapi-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-winapi-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-winapi/src/ost-1.92.0-95f11aed58.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-winapi_x64-linux/share/boost-winapi/copyright
+-- Performing post-build validation
+Starting submission of boost-winapi:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-winapi:x64-linux: 1 s
+Completed submission of boost-predef:x64-linux@1.92.0 to 1 binary cache(s) in 29.2 ms
+Installing 16/68 boost-type-traits:x64-linux@1.92.0...
+boost-type-traits:x64-linux@1.92.0 package ABI: d308fe87f04275a05ead6ee215e4084c59954b0725556fd711c1e77683f3ee69
+Building boost-type-traits:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/type_traits/archive/boost-1.92.0.tar.gz -> boostorg-type_traits-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-type_traits-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-type_traits-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-type-traits/src/ost-1.92.0-5d96f5169c.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-type-traits_x64-linux/share/boost-type-traits/copyright
+-- Performing post-build validation
+Starting submission of boost-type-traits:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-type-traits:x64-linux: 1.2 s
+Completed submission of boost-winapi:x64-linux@1.92.0 to 1 binary cache(s) in 30.5 ms
+Installing 17/68 boost-integer:x64-linux@1.92.0...
+boost-integer:x64-linux@1.92.0 package ABI: 95a2d177d6b0b31023540ce2248cb9add26e310aa69e31cc073fe799a6482471
+Building boost-integer:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/integer/archive/boost-1.92.0.tar.gz -> boostorg-integer-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-integer-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-integer-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-integer/src/ost-1.92.0-9e279eff76.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-integer_x64-linux/share/boost-integer/copyright
+-- Performing post-build validation
+Starting submission of boost-integer:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-integer:x64-linux: 830 ms
+Completed submission of boost-type-traits:x64-linux@1.92.0 to 1 binary cache(s) in 42.6 ms
+Installing 18/68 boost-pool:x64-linux@1.92.0...
+boost-pool:x64-linux@1.92.0 package ABI: 4c64cb59698055f79e334d84a1f1288a56d160f3a72f8183a3a07647eb2bc2a0
+Building boost-pool:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/pool/archive/boost-1.92.0.tar.gz -> boostorg-pool-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-pool-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-pool-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-pool/src/ost-1.92.0-ee18176e74.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-pool_x64-linux/share/boost-pool/copyright
+-- Performing post-build validation
+Starting submission of boost-pool:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-pool:x64-linux: 1.1 s
+Completed submission of boost-integer:x64-linux@1.92.0 to 1 binary cache(s) in 8.81 ms
+Installing 19/68 boost-mp11:x64-linux@1.92.0...
+boost-mp11:x64-linux@1.92.0 package ABI: 6d9f632cfc45bb746c9fbbd7efb8b7dc21d595aae858e70ab574186b9635fbf1
+Building boost-mp11:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/mp11/archive/boost-1.92.0.tar.gz -> boostorg-mp11-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-mp11-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-mp11-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-mp11/src/ost-1.92.0-36b235a834.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-mp11_x64-linux/share/boost-mp11/copyright
+-- Performing post-build validation
+Starting submission of boost-mp11:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-mp11:x64-linux: 946 ms
+Completed submission of boost-pool:x64-linux@1.92.0 to 1 binary cache(s) in 11 ms
+Installing 20/68 boost-context:x64-linux@1.92.0...
+boost-context:x64-linux@1.92.0 package ABI: beba92fdece478d06805402d65ce7ecd735486600ca0bb6c8fa236e95ce3469b
+Building boost-context:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/context/archive/boost-1.92.0.tar.gz -> boostorg-context-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-context-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-context-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-context/src/ost-1.92.0-1be114e397.clean
+-- Configuring x64-linux
+-- Building x64-linux-dbg
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-context_x64-linux/share/boost-context/copyright
+-- Performing post-build validation
+Starting submission of boost-context:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-context:x64-linux: 1.9 s
+Completed submission of boost-mp11:x64-linux@1.92.0 to 1 binary cache(s) in 15 ms
+Installing 21/68 boost-preprocessor:x64-linux@1.92.0...
+boost-preprocessor:x64-linux@1.92.0 package ABI: 214a4bc46a1a0e5fae366010887dfc0df022f1493a16b201355c6a8bf69841dd
+Building boost-preprocessor:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/preprocessor/archive/boost-1.92.0.tar.gz -> boostorg-preprocessor-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-preprocessor-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-preprocessor-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-preprocessor/src/ost-1.92.0-da2645d6a3.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-preprocessor_x64-linux/share/boost-preprocessor/copyright
+-- Performing post-build validation
+Starting submission of boost-preprocessor:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-preprocessor:x64-linux: 1.5 s
+Completed submission of boost-context:x64-linux@1.92.0 to 1 binary cache(s) in 16.6 ms
+Installing 22/68 boost-io:x64-linux@1.92.0...
+boost-io:x64-linux@1.92.0 package ABI: 5c97196bade1a2562bdeb93644c4759187178cab58b4b4319347f49e3d7d6596
+Building boost-io:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/io/archive/boost-1.92.0.tar.gz -> boostorg-io-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-io-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-io-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-io/src/ost-1.92.0-669c99572b.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-io_x64-linux/share/boost-io/copyright
+-- Performing post-build validation
+Starting submission of boost-io:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-io:x64-linux: 863 ms
+Completed submission of boost-preprocessor:x64-linux@1.92.0 to 1 binary cache(s) in 132 ms
+Installing 23/68 boost-utility:x64-linux@1.92.0...
+boost-utility:x64-linux@1.92.0 package ABI: c4f3f0feb08dbad0de1394c651bd55e52d918c98e69509dc752d7c9ecc467692
+Building boost-utility:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/utility/archive/boost-1.92.0.tar.gz -> boostorg-utility-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-utility-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-utility-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-utility/src/ost-1.92.0-09d32f4e6c.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-utility_x64-linux/share/boost-utility/copyright
+-- Performing post-build validation
+Starting submission of boost-utility:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-utility:x64-linux: 999 ms
+Completed submission of boost-io:x64-linux@1.92.0 to 1 binary cache(s) in 11.6 ms
+Installing 24/68 boost-optional:x64-linux@1.92.0...
+boost-optional:x64-linux@1.92.0 package ABI: aa06f2172f4ee711bc197306b0e003f805009bc1b02cbf4c54b4c83e54838cf4
+Building boost-optional:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/optional/archive/boost-1.92.0.tar.gz -> boostorg-optional-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-optional-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-optional-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-optional/src/ost-1.92.0-363039e053.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-optional_x64-linux/share/boost-optional/copyright
+-- Performing post-build validation
+Starting submission of boost-optional:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-optional:x64-linux: 909 ms
+Completed submission of boost-utility:x64-linux@1.92.0 to 1 binary cache(s) in 15.6 ms
+Installing 25/68 boost-mpl:x64-linux@1.92.0...
+boost-mpl:x64-linux@1.92.0 package ABI: 1fd6dbed12863a36fed6c6aa3de0c49fae40f1e2bc05a2d52b2f2d80307a4f9c
+Building boost-mpl:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/mpl/archive/boost-1.92.0.tar.gz -> boostorg-mpl-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-mpl-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-mpl-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-mpl/src/ost-1.92.0-d672c09380.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-mpl_x64-linux/share/boost-mpl/copyright
+-- Performing post-build validation
+Starting submission of boost-mpl:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-mpl:x64-linux: 1.8 s
+Completed submission of boost-optional:x64-linux@1.92.0 to 1 binary cache(s) in 10.5 ms
+Installing 26/68 boost-typeof:x64-linux@1.92.0...
+boost-typeof:x64-linux@1.92.0 package ABI: 0a891abaceaf94397d15cf69bb20cb6fea13ef48177017dd4acca7046d8fd525
+Building boost-typeof:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/typeof/archive/boost-1.92.0.tar.gz -> boostorg-typeof-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-typeof-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-typeof-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-typeof/src/ost-1.92.0-06a097923f.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-typeof_x64-linux/share/boost-typeof/copyright
+-- Performing post-build validation
+Starting submission of boost-typeof:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-typeof:x64-linux: 894 ms
+Completed submission of boost-mpl:x64-linux@1.92.0 to 1 binary cache(s) in 162 ms
+Installing 27/68 boost-tuple:x64-linux@1.92.0...
+boost-tuple:x64-linux@1.92.0 package ABI: dc6e31bbd57256730d50e3e4ab7f582f1f578b1b8f3291aacabc6a55676089d4
+Building boost-tuple:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/tuple/archive/boost-1.92.0.tar.gz -> boostorg-tuple-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-tuple-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-tuple-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-tuple/src/ost-1.92.0-b98616ebe7.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-tuple_x64-linux/share/boost-tuple/copyright
+-- Performing post-build validation
+Starting submission of boost-tuple:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-tuple:x64-linux: 790 ms
+Completed submission of boost-typeof:x64-linux@1.92.0 to 1 binary cache(s) in 8.31 ms
+Installing 28/68 boost-detail:x64-linux@1.92.0...
+boost-detail:x64-linux@1.92.0 package ABI: 295d082adaf35607eaab4157864fc81335bd23fe7864b995d54701a6d8f126d2
+Building boost-detail:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/detail/archive/boost-1.92.0.tar.gz -> boostorg-detail-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-detail-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-detail-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-detail/src/ost-1.92.0-a20b9c701e.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-detail_x64-linux/share/boost-detail/copyright
+-- Performing post-build validation
+Starting submission of boost-detail:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-detail:x64-linux: 875 ms
+Completed submission of boost-tuple:x64-linux@1.92.0 to 1 binary cache(s) in 8.55 ms
+Installing 29/68 boost-function-types:x64-linux@1.92.0...
+boost-function-types:x64-linux@1.92.0 package ABI: bccf1638286816d0e46b7362940f6ef8a12c0176397ab7b97bb071719eb5de5f
+Building boost-function-types:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/function_types/archive/boost-1.92.0.tar.gz -> boostorg-function_types-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-function_types-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-function_types-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-function-types/src/ost-1.92.0-d51abf8c9e.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-function-types_x64-linux/share/boost-function-types/copyright
+-- Performing post-build validation
+Starting submission of boost-function-types:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-function-types:x64-linux: 906 ms
+Completed submission of boost-detail:x64-linux@1.92.0 to 1 binary cache(s) in 14.6 ms
+Installing 30/68 boost-describe:x64-linux@1.92.0...
+boost-describe:x64-linux@1.92.0 package ABI: b404ce435f5f760ad7874a1ce6ece7468e40209a65d63bd2daa48800c2236cec
+Building boost-describe:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/describe/archive/boost-1.92.0.tar.gz -> boostorg-describe-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-describe-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-describe-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-describe/src/ost-1.92.0-72558e303c.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-describe_x64-linux/share/boost-describe/copyright
+-- Performing post-build validation
+Starting submission of boost-describe:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-describe:x64-linux: 937 ms
+Completed submission of boost-function-types:x64-linux@1.92.0 to 1 binary cache(s) in 23.6 ms
+Installing 31/68 boost-container-hash:x64-linux@1.92.0...
+boost-container-hash:x64-linux@1.92.0 package ABI: d716519e6458b52ea54148a0f31f1de9ccb0d37aaafc9545b97c1c3badcedef0
+Building boost-container-hash:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/container_hash/archive/boost-1.92.0.tar.gz -> boostorg-container_hash-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-container_hash-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-container_hash-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-container-hash/src/ost-1.92.0-fa6aa6bddd.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-container-hash_x64-linux/share/boost-container-hash/copyright
+-- Performing post-build validation
+Starting submission of boost-container-hash:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-container-hash:x64-linux: 879 ms
+Completed submission of boost-describe:x64-linux@1.92.0 to 1 binary cache(s) in 10.7 ms
+Installing 32/68 boost-fusion:x64-linux@1.92.0...
+boost-fusion:x64-linux@1.92.0 package ABI: 2221320262db27a397420035c3d1c812b5764a6a0c7280aada73e54f114e82b0
+Building boost-fusion:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/fusion/archive/boost-1.92.0.tar.gz -> boostorg-fusion-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-fusion-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-fusion-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-fusion/src/ost-1.92.0-ba95f1adfc.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-fusion_x64-linux/share/boost-fusion/copyright
+-- Performing post-build validation
+Starting submission of boost-fusion:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-fusion:x64-linux: 2 s
+Completed submission of boost-container-hash:x64-linux@1.92.0 to 1 binary cache(s) in 8.83 ms
+Installing 33/68 boost-concept-check:x64-linux@1.92.0...
+boost-concept-check:x64-linux@1.92.0 package ABI: 6aa97ba68ca0688e27f728c7f7aa65269404e9f87db9cb6a66569859487b5224
+Building boost-concept-check:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/concept_check/archive/boost-1.92.0.tar.gz -> boostorg-concept_check-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-concept_check-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-concept_check-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-concept-check/src/ost-1.92.0-794811da14.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-concept-check_x64-linux/share/boost-concept-check/copyright
+-- Performing post-build validation
+Starting submission of boost-concept-check:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-concept-check:x64-linux: 968 ms
+Completed submission of boost-fusion:x64-linux@1.92.0 to 1 binary cache(s) in 352 ms
+Installing 34/68 boost-iterator:x64-linux@1.92.0...
+boost-iterator:x64-linux@1.92.0 package ABI: 7c820ce0c020e9794a918216e8d6758f71af9838cf91c6b3d12e2c7c4cd72f6e
+Building boost-iterator:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/iterator/archive/boost-1.92.0.tar.gz -> boostorg-iterator-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-iterator-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-iterator-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-iterator/src/ost-1.92.0-d2d0298dd5.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-iterator_x64-linux/share/boost-iterator/copyright
+-- Performing post-build validation
+Starting submission of boost-iterator:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-iterator:x64-linux: 1.3 s
+Completed submission of boost-concept-check:x64-linux@1.92.0 to 1 binary cache(s) in 9.84 ms
+Installing 35/68 boost-tokenizer:x64-linux@1.92.0...
+boost-tokenizer:x64-linux@1.92.0 package ABI: b2e791b882320b93555e31054f5523d8f1c0d9225c1cd51c290a4b87edc46732
+Building boost-tokenizer:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/tokenizer/archive/boost-1.92.0.tar.gz -> boostorg-tokenizer-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-tokenizer-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-tokenizer-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-tokenizer/src/ost-1.92.0-13e07fb5af.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-tokenizer_x64-linux/share/boost-tokenizer/copyright
+-- Performing post-build validation
+Starting submission of boost-tokenizer:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-tokenizer:x64-linux: 850 ms
+Completed submission of boost-iterator:x64-linux@1.92.0 to 1 binary cache(s) in 15.6 ms
+Installing 36/68 boost-static-assert:x64-linux@1.92.0...
+boost-static-assert:x64-linux@1.92.0 package ABI: c28f66cbc307943a892eeb2d55e520ca2a3b751e18ebdd8a87d5791a2491f95b
+Building boost-static-assert:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/static_assert/archive/boost-1.92.0.tar.gz -> boostorg-static_assert-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-static_assert-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-static_assert-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-static-assert/src/ost-1.92.0-04f3234f05.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-static-assert_x64-linux/share/boost-static-assert/copyright
+-- Performing post-build validation
+Starting submission of boost-static-assert:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-static-assert:x64-linux: 830 ms
+Completed submission of boost-tokenizer:x64-linux@1.92.0 to 1 binary cache(s) in 6.65 ms
+Installing 37/68 boost-regex:x64-linux@1.92.0...
+boost-regex:x64-linux@1.92.0 package ABI: dbe9a4610e622d597da70a7fa2b20206ebba41e9e60b36b89d57a3bcac69eca4
+Building boost-regex:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/regex/archive/boost-1.92.0.tar.gz -> boostorg-regex-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-regex-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-regex-boost-1.92.0.tar.gz
+-- Applying patch compat.diff
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-regex/src/ost-1.92.0-cb29408847.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-regex_x64-linux/share/boost-regex/copyright
+-- Performing post-build validation
+Starting submission of boost-regex:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-regex:x64-linux: 1.4 s
+Completed submission of boost-static-assert:x64-linux@1.92.0 to 1 binary cache(s) in 7.91 ms
+Installing 38/68 boost-conversion:x64-linux@1.92.0...
+boost-conversion:x64-linux@1.92.0 package ABI: 82333bdb403761f323b31e0b50ae033eb906e4cd4e099435a8014a695f326629
+Building boost-conversion:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/conversion/archive/boost-1.92.0.tar.gz -> boostorg-conversion-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-conversion-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-conversion-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-conversion/src/ost-1.92.0-bc9e041057.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-conversion_x64-linux/share/boost-conversion/copyright
+-- Performing post-build validation
+Starting submission of boost-conversion:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-conversion:x64-linux: 782 ms
+Completed submission of boost-regex:x64-linux@1.92.0 to 1 binary cache(s) in 34.4 ms
+Installing 39/68 boost-array:x64-linux@1.92.0...
+boost-array:x64-linux@1.92.0 package ABI: 306f240d15b315244aff077cff66f12d5ae98d50483fcc84ee8950a34ba191c1
+Building boost-array:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/array/archive/boost-1.92.0.tar.gz -> boostorg-array-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-array-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-array-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-array/src/ost-1.92.0-93b91032f3.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-array_x64-linux/share/boost-array/copyright
+-- Performing post-build validation
+Starting submission of boost-array:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-array:x64-linux: 968 ms
+Completed submission of boost-conversion:x64-linux@1.92.0 to 1 binary cache(s) in 6.76 ms
+Installing 40/68 boost-range:x64-linux@1.92.0...
+boost-range:x64-linux@1.92.0 package ABI: b6d6b1170d6fedd25924d74e80248ad772eaf4c8e49f5d8e8202cf37f0210050
+Building boost-range:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/range/archive/boost-1.92.0.tar.gz -> boostorg-range-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-range-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-range-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-range/src/ost-1.92.0-541b740c0a.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-range_x64-linux/share/boost-range/copyright
+-- Performing post-build validation
+Starting submission of boost-range:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-range:x64-linux: 1.3 s
+Completed submission of boost-array:x64-linux@1.92.0 to 1 binary cache(s) in 12.5 ms
+Installing 41/68 boost-numeric-conversion:x64-linux@1.92.0...
+boost-numeric-conversion:x64-linux@1.92.0 package ABI: 6106002743ff5cac64cf29972c7caf3c239af093da833944d2073c00e674fef7
+Building boost-numeric-conversion:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/numeric_conversion/archive/boost-1.92.0.tar.gz -> boostorg-numeric_conversion-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-numeric_conversion-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-numeric_conversion-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-numeric-conversion/src/ost-1.92.0-c4f959aa8e.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-numeric-conversion_x64-linux/share/boost-numeric-conversion/copyright
+-- Performing post-build validation
+Starting submission of boost-numeric-conversion:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-numeric-conversion:x64-linux: 1.1 s
+Completed submission of boost-range:x64-linux@1.92.0 to 1 binary cache(s) in 38.1 ms
+Installing 42/68 boost-move:x64-linux@1.92.0...
+boost-move:x64-linux@1.92.0 package ABI: a0390ea9bba14b6c76404a79179e7ed8c21be0e9d45378be86fcf506d23d8c99
+Building boost-move:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/move/archive/boost-1.92.0.tar.gz -> boostorg-move-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-move-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-move-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-move/src/ost-1.92.0-1c71703b10.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-move_x64-linux/share/boost-move/copyright
+-- Performing post-build validation
+Starting submission of boost-move:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-move:x64-linux: 1.1 s
+Completed submission of boost-numeric-conversion:x64-linux@1.92.0 to 1 binary cache(s) in 12.7 ms
+Installing 43/68 boost-intrusive:x64-linux@1.92.0...
+boost-intrusive:x64-linux@1.92.0 package ABI: ffbd3d9e4625925790b19c03e27d7f63cf562e13711d6f1fbafddfd0f51fc5e1
+Building boost-intrusive:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/intrusive/archive/boost-1.92.0.tar.gz -> boostorg-intrusive-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-intrusive-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-intrusive-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-intrusive/src/ost-1.92.0-614bc9da4d.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-intrusive_x64-linux/share/boost-intrusive/copyright
+-- Performing post-build validation
+Starting submission of boost-intrusive:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-intrusive:x64-linux: 1.1 s
+Completed submission of boost-move:x64-linux@1.92.0 to 1 binary cache(s) in 42.3 ms
+Installing 44/68 boost-container:x64-linux@1.92.0...
+boost-container:x64-linux@1.92.0 package ABI: ce3e2c78296ba0631bd13899d7ff51a7586332cba148f448acd8c71b878f81de
+Building boost-container:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/container/archive/boost-1.92.0.tar.gz -> boostorg-container-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-container-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-container-boost-1.92.0.tar.gz
+-- Applying patch posix-threads.diff
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-container/src/ost-1.92.0-ff25501e8f.clean
+-- Configuring x64-linux
+-- Building x64-linux-dbg
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-container_x64-linux/share/boost-container/copyright
+-- Performing post-build validation
+Starting submission of boost-container:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-container:x64-linux: 5.1 s
+Completed submission of boost-intrusive:x64-linux@1.92.0 to 1 binary cache(s) in 69.8 ms
+Installing 45/68 boost-lexical-cast:x64-linux@1.92.0...
+boost-lexical-cast:x64-linux@1.92.0 package ABI: b7636af679ca052113dd08768d27ae986ff77d2e73960e22ae8165f54abc8899
+Building boost-lexical-cast:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/lexical_cast/archive/boost-1.92.0.tar.gz -> boostorg-lexical_cast-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-lexical_cast-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-lexical_cast-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-lexical-cast/src/ost-1.92.0-58e700ee8a.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-lexical-cast_x64-linux/share/boost-lexical-cast/copyright
+-- Performing post-build validation
+Starting submission of boost-lexical-cast:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-lexical-cast:x64-linux: 1 s
+Completed submission of boost-container:x64-linux@1.92.0 to 1 binary cache(s) in 121 ms
+Installing 46/68 boost-unordered:x64-linux@1.92.0...
+boost-unordered:x64-linux@1.92.0 package ABI: 81dbbb0a2e060e37809f9e27f4df8efc1584940ab0821c79d0771da3f71e9ec3
+Building boost-unordered:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/unordered/archive/boost-1.92.0.tar.gz -> boostorg-unordered-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-unordered-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-unordered-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-unordered/src/ost-1.92.0-cac88d2b57.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-unordered_x64-linux/share/boost-unordered/copyright
+-- Performing post-build validation
+Starting submission of boost-unordered:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-unordered:x64-linux: 1.3 s
+Completed submission of boost-lexical-cast:x64-linux@1.92.0 to 1 binary cache(s) in 10.1 ms
+Installing 47/68 boost-bind:x64-linux@1.92.0...
+boost-bind:x64-linux@1.92.0 package ABI: 27739abf65bf3358b6a552b57aa574460287a98f697c2d86b0613b2b55ed696b
+Building boost-bind:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/bind/archive/boost-1.92.0.tar.gz -> boostorg-bind-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-bind-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-bind-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-bind/src/ost-1.92.0-5582a80136.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-bind_x64-linux/share/boost-bind/copyright
+-- Performing post-build validation
+Starting submission of boost-bind:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-bind:x64-linux: 995 ms
+Completed submission of boost-unordered:x64-linux@1.92.0 to 1 binary cache(s) in 35.8 ms
+Installing 48/68 boost-function:x64-linux@1.92.0...
+boost-function:x64-linux@1.92.0 package ABI: 11fd7f9641b5b1799d00e83a238b7eb43aa2695f1d19fdf603dc2d5c1bac9f71
+Building boost-function:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/function/archive/boost-1.92.0.tar.gz -> boostorg-function-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-function-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-function-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-function/src/ost-1.92.0-a495fcadc3.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-function_x64-linux/share/boost-function/copyright
+-- Performing post-build validation
+Starting submission of boost-function:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-function:x64-linux: 949 ms
+Completed submission of boost-bind:x64-linux@1.92.0 to 1 binary cache(s) in 8.12 ms
+Installing 49/68 boost-exception:x64-linux@1.92.0...
+boost-exception:x64-linux@1.92.0 package ABI: 72a32413d7cc34e1279703790aa32de68173c0f0cd497692edf9923c409dc191
+Building boost-exception:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/exception/archive/boost-1.92.0.tar.gz -> boostorg-exception-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-exception-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-exception-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-exception/src/ost-1.92.0-304083abc5.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-exception_x64-linux/share/boost-exception/copyright
+-- Performing post-build validation
+Starting submission of boost-exception:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-exception:x64-linux: 1.3 s
+Completed submission of boost-function:x64-linux@1.92.0 to 1 binary cache(s) in 20.2 ms
+Installing 50/68 boost-algorithm:x64-linux@1.92.0...
+boost-algorithm:x64-linux@1.92.0 package ABI: b6650c3905f4e06137281d305fd39d9d16339264efba1fb1e6c1ad33a52fb36c
+Building boost-algorithm:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/algorithm/archive/boost-1.92.0.tar.gz -> boostorg-algorithm-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-algorithm-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-algorithm-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-algorithm/src/ost-1.92.0-5e305ae1e9.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-algorithm_x64-linux/share/boost-algorithm/copyright
+-- Performing post-build validation
+Starting submission of boost-algorithm:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-algorithm:x64-linux: 1.7 s
+Completed submission of boost-exception:x64-linux@1.92.0 to 1 binary cache(s) in 16 ms
+Installing 51/68 boost-date-time:x64-linux@1.92.0...
+boost-date-time:x64-linux@1.92.0 package ABI: ff3e4976b55d2e098fe26e0d211c1a1069792a4a858e7ba4799914563727c32d
+Building boost-date-time:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/date_time/archive/boost-1.92.0.tar.gz -> boostorg-date_time-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-date_time-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-date_time-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-date-time/src/ost-1.92.0-966e72f7f0.clean
+-- Configuring x64-linux
+-- Building x64-linux-dbg
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-date-time_x64-linux/share/boost-date-time/copyright
+-- Performing post-build validation
+Starting submission of boost-date-time:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-date-time:x64-linux: 1.8 s
+Completed submission of boost-algorithm:x64-linux@1.92.0 to 1 binary cache(s) in 28 ms
+Installing 52/68 boost-variant2:x64-linux@1.92.0...
+boost-variant2:x64-linux@1.92.0 package ABI: 9076ea7851f00b70c0703c03c3ac8b731afe916e2323d91efe3de19b3c7c0d98
+Building boost-variant2:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/variant2/archive/boost-1.92.0.tar.gz -> boostorg-variant2-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-variant2-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-variant2-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-variant2/src/ost-1.92.0-a22b7bdd33.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-variant2_x64-linux/share/boost-variant2/copyright
+-- Performing post-build validation
+Starting submission of boost-variant2:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-variant2:x64-linux: 939 ms
+Completed submission of boost-date-time:x64-linux@1.92.0 to 1 binary cache(s) in 36.9 ms
+Installing 53/68 boost-compat:x64-linux@1.92.0...
+boost-compat:x64-linux@1.92.0 package ABI: 58178000420d2a8eadec4eb0bfff8af0006bd650680ecf3ae9823897b4a8e0c3
+Building boost-compat:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/compat/archive/boost-1.92.0.tar.gz -> boostorg-compat-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-compat-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-compat-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-compat/src/ost-1.92.0-436157e8f5.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-compat_x64-linux/share/boost-compat/copyright
+-- Performing post-build validation
+Starting submission of boost-compat:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-compat:x64-linux: 1.1 s
+Completed submission of boost-variant2:x64-linux@1.92.0 to 1 binary cache(s) in 10 ms
+Installing 54/68 boost-system:x64-linux@1.92.0...
+boost-system:x64-linux@1.92.0 package ABI: 37d25e16eb37dd4011ac7e959f1a6d8d3913cf248c7aec6a5f624f6066f13be8
+Building boost-system:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/system/archive/boost-1.92.0.tar.gz -> boostorg-system-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-system-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-system-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-system/src/ost-1.92.0-8071ad82cb.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-system_x64-linux/share/boost-system/copyright
+-- Performing post-build validation
+Starting submission of boost-system:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-system:x64-linux: 989 ms
+Completed submission of boost-compat:x64-linux@1.92.0 to 1 binary cache(s) in 8.98 ms
+Installing 55/68 boost-align:x64-linux@1.92.0...
+boost-align:x64-linux@1.92.0 package ABI: 9cc248fb66f7ab08fae342996b3726f70f1aaafce4e889ad8bd971b7293fffe8
+Building boost-align:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/align/archive/boost-1.92.0.tar.gz -> boostorg-align-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-align-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-align-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-align/src/ost-1.92.0-060b843031.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-align_x64-linux/share/boost-align/copyright
+-- Performing post-build validation
+Starting submission of boost-align:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-align:x64-linux: 844 ms
+Completed submission of boost-system:x64-linux@1.92.0 to 1 binary cache(s) in 15.1 ms
+Installing 56/68 boost-asio[core,deadline-timer,spawn,ssl]:x64-linux@1.92.0...
+boost-asio[core,deadline-timer,spawn,ssl]:x64-linux@1.92.0 package ABI: a4fc6152195fda74f7e3d558311edd4bbe35e940c9d003b23888d81a4d553e36
+Building boost-asio[core,deadline-timer,spawn,ssl]:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/asio/archive/boost-1.92.0.tar.gz -> boostorg-asio-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-asio-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-asio-boost-1.92.0.tar.gz
+-- Applying patch 0001-add-options.patch
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-asio/src/ost-1.92.0-3a74e4d9d9.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-asio_x64-linux/share/boost-asio/copyright
+-- Performing post-build validation
+Starting submission of boost-asio[core,deadline-timer,spawn,ssl]:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-asio:x64-linux: 2.1 s
+Completed submission of boost-align:x64-linux@1.92.0 to 1 binary cache(s) in 15.9 ms
+Installing 57/68 boost-type-index:x64-linux@1.92.0...
+boost-type-index:x64-linux@1.92.0 package ABI: 0a1b4a27854951fc90daf3d644d5b891672ef3cb1cf638495f43807cdb401efd
+Building boost-type-index:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/type_index/archive/boost-1.92.0.tar.gz -> boostorg-type_index-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-type_index-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-type_index-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-type-index/src/ost-1.92.0-abc0bdaea0.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-type-index_x64-linux/share/boost-type-index/copyright
+-- Performing post-build validation
+Starting submission of boost-type-index:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-type-index:x64-linux: 945 ms
+Completed submission of boost-asio[core,deadline-timer,spawn,ssl]:x64-linux@1.92.0 to 1 binary cache(s) in 227 ms
+Installing 58/68 boost-static-string:x64-linux@1.92.0...
+boost-static-string:x64-linux@1.92.0 package ABI: 31419840c9dea2b36a1656d47ce7320b05b4d35664b727110c8241d7f05a0927
+Building boost-static-string:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/static_string/archive/boost-1.92.0.tar.gz -> boostorg-static_string-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-static_string-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-static_string-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-static-string/src/ost-1.92.0-0384a08748.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-static-string_x64-linux/share/boost-static-string/copyright
+-- Performing post-build validation
+Starting submission of boost-static-string:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-static-string:x64-linux: 961 ms
+Completed submission of boost-type-index:x64-linux@1.92.0 to 1 binary cache(s) in 9.21 ms
+Installing 59/68 boost-logic:x64-linux@1.92.0...
+boost-logic:x64-linux@1.92.0 package ABI: 5463a9722d4debcb9d34ef51042cded367c90e31929e1819abd012e1ca0ef95e
+Building boost-logic:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/logic/archive/boost-1.92.0.tar.gz -> boostorg-logic-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-logic-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-logic-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-logic/src/ost-1.92.0-2be139a42c.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-logic_x64-linux/share/boost-logic/copyright
+-- Performing post-build validation
+Starting submission of boost-logic:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-logic:x64-linux: 833 ms
+Completed submission of boost-static-string:x64-linux@1.92.0 to 1 binary cache(s) in 10.3 ms
+Installing 60/68 boost-endian:x64-linux@1.92.0...
+boost-endian:x64-linux@1.92.0 package ABI: 99641c46f55e9d28a095f840c6c38283216c8a9b7ea317b3715d4fac38396f89
+Building boost-endian:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/endian/archive/boost-1.92.0.tar.gz -> boostorg-endian-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-endian-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-endian-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-endian/src/ost-1.92.0-3f5777a277.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-endian_x64-linux/share/boost-endian/copyright
+-- Performing post-build validation
+Starting submission of boost-endian:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-endian:x64-linux: 878 ms
+Completed submission of boost-logic:x64-linux@1.92.0 to 1 binary cache(s) in 6.78 ms
+Installing 61/68 boost-beast:x64-linux@1.92.0...
+boost-beast:x64-linux@1.92.0 package ABI: f11a011c9dd89d39c788691c9e865dbd0526bd6b2064b4f5daa035189db8dc07
+Building boost-beast:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/beast/archive/boost-1.92.0.tar.gz -> boostorg-beast-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-beast-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-beast-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-beast/src/ost-1.92.0-7116fe278a.clean
+-- Configuring x64-linux
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-beast_x64-linux/share/boost-beast/copyright
+-- Performing post-build validation
+Starting submission of boost-beast:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-beast:x64-linux: 1.7 s
+Completed submission of boost-endian:x64-linux@1.92.0 to 1 binary cache(s) in 8.86 ms
+Installing 62/68 boost-json:x64-linux@1.92.0...
+boost-json:x64-linux@1.92.0 package ABI: 90854b4747f48f85d8da6ce33afc0e1ddff31ce260ed27f5306870061968ff17
+Building boost-json:x64-linux@1.92.0...
+Downloading https://github.com/boostorg/json/archive/boost-1.92.0.tar.gz -> boostorg-json-boost-1.92.0.tar.gz
+Successfully downloaded boostorg-json-boost-1.92.0.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/boostorg-json-boost-1.92.0.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/boost-json/src/ost-1.92.0-e8858d63f0.clean
+-- Configuring x64-linux
+-- Building x64-linux-dbg
+-- Building x64-linux-rel
+-- Installing: /home/vscode/vcpkg/packages/boost-json_x64-linux/share/boost-json/copyright
+-- Performing post-build validation
+Starting submission of boost-json:x64-linux@1.92.0 to 1 binary cache(s) in the background
+Elapsed time to handle boost-json:x64-linux: 16 s
+Completed submission of boost-beast:x64-linux@1.92.0 to 1 binary cache(s) in 74.2 ms
+Installing 63/68 vcpkg-make:x64-linux@2026-07-09#2...
+vcpkg-make:x64-linux@2026-07-09#2 package ABI: 3d3d87159c29d19726d475975b5cdd6dd635bdb9a98349b0f68798745a5dc2bd
+Building vcpkg-make:x64-linux@2026-07-09#2...
+Downloading automake-1.17.tar.gz, trying https://ftpmirror.gnu.org/gnu/automake/automake-1.17.tar.gz
+Successfully downloaded automake-1.17.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/automake-1.17.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/vcpkg-make/src/automake-1-c362683103.clean
+-- Getting CMake variables for x64-linux
+-- Loading CMake variables from /home/vscode/vcpkg/buildtrees/vcpkg-make/cmake-get-vars_C_CXX-x64-linux.cmake.log
+-- x64-linux autotools triplet: x86_64-pc-linux-gnu (from config.guess)
+-- Performing post-build validation
+Starting submission of vcpkg-make:x64-linux@2026-07-09#2 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-make:x64-linux: 2.3 s
+Completed submission of boost-json:x64-linux@1.92.0 to 1 binary cache(s) in 187 ms
+Installing 64/68 libiconv:x64-linux@1.19#1...
+libiconv:x64-linux@1.19#1 package ABI: 014d31f16922ad966e6c3328d3487e0dc9a4ddf58550e55bc8fd30672889b1d7
+Building libiconv:x64-linux@1.19#1...
+-- Not building GNU libiconv.
+-- Skipping post-build validation due to VCPKG_POLICY_EMPTY_PACKAGE
+Starting submission of libiconv:x64-linux@1.19#1 to 1 binary cache(s) in the background
+Elapsed time to handle libiconv:x64-linux: 39.7 ms
+Completed submission of vcpkg-make:x64-linux@2026-07-09#2 to 1 binary cache(s) in 11.1 ms
+Installing 65/68 libunistring:x64-linux@1.2#4...
+libunistring:x64-linux@1.2#4 package ABI: 83dc39e5e212cd29b45c1beb620f89f235d61fdd1835f31f8c3678aa0509f063
+Building libunistring:x64-linux@1.2#4...
+Downloading libunistring-1.2.tar.xz, trying https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/libunistring/libunistring-1.2.tar.xz
+Successfully downloaded libunistring-1.2.tar.xz
+-- Extracting source /usr/local/vcpkg-downloads/libunistring-1.2.tar.xz
+-- Applying patch disable-gnulib-fetch.patch
+-- Applying patch disable-subdirs.patch
+-- Applying patch parallelize-symbol-collection.patch
+-- Applying patch msvc-use-stdint.patch
+-- Using source at /home/vscode/vcpkg/buildtrees/libunistring/src/v1.2-79345a7437.clean
+-- Getting CMake variables for x64-linux-dbg
+-- Getting CMake variables for x64-linux-rel
+-- Generating configure for x64-linux
+-- Finished generating configure for x64-linux
+-- Configuring x64-linux-dbg
+-- Configuring x64-linux-rel
+-- Building x64-linux-dbg
+-- Installing x64-linux-dbg
+-- Building x64-linux-rel
+-- Installing x64-linux-rel
+-- Performing post-build validation
+Starting submission of libunistring:x64-linux@1.2#4 to 1 binary cache(s) in the background
+Elapsed time to handle libunistring:x64-linux: 3.8 min
+Completed submission of libiconv:x64-linux@1.19#1 to 1 binary cache(s) in 5.05 ms
+Installing 66/68 libidn2:x64-linux@2.3.7#3...
+libidn2:x64-linux@2.3.7#3 package ABI: 152cb0e03e4598794bf980849ddb76b4399ce496414bdbbd9513f848811b7448
+Building libidn2:x64-linux@2.3.7#3...
+Downloading libidn2-2.3.7.tar.gz, trying https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz
+Successfully downloaded libidn2-2.3.7.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/libidn2-2.3.7.tar.gz
+-- Applying patch disable-subdirs.patch
+-- Applying patch fix-uwp.patch
+-- Using source at /home/vscode/vcpkg/buildtrees/libidn2/src/v2.3.7-199e264bfd.clean
+-- Getting CMake variables for x64-linux
+-- Loading CMake variables from /home/vscode/vcpkg/buildtrees/libidn2/cmake-get-vars_C_CXX-x64-linux.cmake.log
+-- Generating configure for x64-linux
+-- Finished generating configure for x64-linux
+-- Configuring x64-linux-dbg
+-- Configuring x64-linux-rel
+-- Building/Installing x64-linux-dbg
+-- Making target 'all' for x64-linux-dbg
+-- Making target 'install' for x64-linux-dbg
+-- Building/Installing x64-linux-rel
+-- Making target 'all' for x64-linux-rel
+-- Making target 'install' for x64-linux-rel
+-- Fixing pkgconfig file: /home/vscode/vcpkg/packages/libidn2_x64-linux/lib/pkgconfig/libidn2.pc
+-- Fixing pkgconfig file: /home/vscode/vcpkg/packages/libidn2_x64-linux/debug/lib/pkgconfig/libidn2.pc
+-- Adjusted RPATH of '/home/vscode/vcpkg/packages/libidn2_x64-linux/tools/libidn2/bin/idn2' (From '' -> To '$ORIGIN:$ORIGIN/../../../lib')
+-- Performing post-build validation
+Starting submission of libidn2:x64-linux@2.3.7#3 to 1 binary cache(s) in the background
+Elapsed time to handle libidn2:x64-linux: 51 s
+Completed submission of libunistring:x64-linux@1.2#4 to 1 binary cache(s) in 283 ms
+Installing 67/68 vcpkg-tool-meson:x64-linux@1.12.1...
+vcpkg-tool-meson:x64-linux@1.12.1 package ABI: d8113892fe8a03c27e7d5e1829062cf976f3781a3e92d6c95a349d34489a7ae4
+Building vcpkg-tool-meson:x64-linux@1.12.1...
+Downloading https://raw.githubusercontent.com/mesonbuild/meson/70598bb7825f0f804fb31ec2795de5e79e7692a0/COPYING -> meson-1.12.1-COPYING
+Successfully downloaded meson-1.12.1-COPYING
+Downloading https://github.com/mesonbuild/meson/archive/1.12.1.tar.gz -> meson-1.12.1.tar.gz
+Successfully downloaded meson-1.12.1.tar.gz
+-- Applying patch /home/vscode/vcpkg/packages/vcpkg-tool-meson_x64-linux/share/vcpkg-tool-meson/meson-intl.patch
+-- Applying patch /home/vscode/vcpkg/packages/vcpkg-tool-meson_x64-linux/share/vcpkg-tool-meson/adjust-python-dep.patch
+-- Applying patch /home/vscode/vcpkg/packages/vcpkg-tool-meson_x64-linux/share/vcpkg-tool-meson/adjust-args.patch
+-- Applying patch /home/vscode/vcpkg/packages/vcpkg-tool-meson_x64-linux/share/vcpkg-tool-meson/remove-pkgconfig-specialization.patch
+-- Applying patch /home/vscode/vcpkg/packages/vcpkg-tool-meson_x64-linux/share/vcpkg-tool-meson/rc-args.patch
+-- Found Python version '3.12.3 at /usr/bin/python3'
+-- Using meson: /usr/local/vcpkg-downloads/tools/meson-1.12.1-224c27/meson.py
+-- Performing post-build validation
+Starting submission of vcpkg-tool-meson:x64-linux@1.12.1 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-tool-meson:x64-linux: 1.5 s
+Completed submission of libidn2:x64-linux@2.3.7#3 to 1 binary cache(s) in 86.3 ms
+Installing 68/68 libpsl[core,libidn2]:x64-linux@0.21.5#1...
+libpsl[core,libidn2]:x64-linux@0.21.5#1 package ABI: 1a4cc30346e2aec2307906acec30e3d14fdff47a8e2fe11a1aec79c288bd35f3
+Building libpsl[core,libidn2]:x64-linux@0.21.5#1...
+-- Found Python version '3.12.3 at /usr/bin/python3'
+-- Using meson: /usr/local/vcpkg-downloads/tools/meson-1.12.1-224c27/meson.py
+Downloading https://github.com/rockdaboot/libpsl/archive/0.21.5.tar.gz -> rockdaboot-libpsl-0.21.5.tar.gz
+Successfully downloaded rockdaboot-libpsl-0.21.5.tar.gz
+-- Extracting source /usr/local/vcpkg-downloads/rockdaboot-libpsl-0.21.5.tar.gz
+-- Using source at /home/vscode/vcpkg/buildtrees/libpsl/src/0.21.5-062ce9d927.clean
+Downloading https://raw.githubusercontent.com/publicsuffix/list/0ed17ee161ed2ae551c78f3b399ac8f2724d2154/public_suffix_list.dat -> libpsl-public_suffix_list-0ed17e.dat
+Successfully downloaded libpsl-public_suffix_list-0ed17e.dat
+-- Configuring x64-linux-dbg
+-- Getting CMake variables for x64-linux
+-- Loading CMake variables from /home/vscode/vcpkg/buildtrees/libpsl/cmake-get-vars_C_CXX-x64-linux.cmake.log
+-- Configuring x64-linux-dbg done
+-- Configuring x64-linux-rel
+-- Configuring x64-linux-rel done
+-- Package x64-linux-dbg
+-- Package x64-linux-rel
+-- Fixing pkgconfig file: /home/vscode/vcpkg/packages/libpsl_x64-linux/lib/pkgconfig/libpsl.pc
+-- Fixing pkgconfig file: /home/vscode/vcpkg/packages/libpsl_x64-linux/debug/lib/pkgconfig/libpsl.pc
+-- Installing: /home/vscode/vcpkg/packages/libpsl_x64-linux/share/libpsl/copyright
+-- Adjusted RPATH of '/home/vscode/vcpkg/packages/libpsl_x64-linux/tools/libpsl/psl' (From '' -> To '$ORIGIN:$ORIGIN/../../lib')
+-- Performing post-build validation
+Starting submission of libpsl[core,libidn2]:x64-linux@0.21.5#1 to 1 binary cache(s) in the background
+Elapsed time to handle libpsl:x64-linux: 10 s
+Installed contents are licensed to you by owners. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Some packages did not declare an SPDX license. Check the `copyright` file for each package for more information about their licensing.
+Packages installed in this vcpkg installation declare the following licenses:
+(LGPL-3.0-or-later OR GPL-2.0-or-later)
+Apache-2.0
+BSL-1.0
+MIT
+openssl is compatible with built-in CMake targets:
+
+  find_package(OpenSSL REQUIRED)
+  target_link_libraries(main PRIVATE OpenSSL::SSL)
+  target_link_libraries(main PRIVATE OpenSSL::Crypto)
+
+boost-asio is compatible with built-in CMake targets of FindBoost.cmake:
+
+    find_package(Boost REQUIRED COMPONENTS asio)
+    target_link_libraries(main PRIVATE Boost::asio)
+
+or the generated cmake configs via:
+
+    find_package(boost_asio REQUIRED CONFIG)
+    target_link_libraries(main PRIVATE Boost::asio)
+
+boost-beast is compatible with built-in CMake targets of FindBoost.cmake:
+
+    find_package(Boost REQUIRED COMPONENTS beast)
+    target_link_libraries(main PRIVATE Boost::beast)
+
+or the generated cmake configs via:
+
+    find_package(boost_beast REQUIRED CONFIG)
+    target_link_libraries(main PRIVATE Boost::beast)
+
+boost-json is compatible with built-in CMake targets of FindBoost.cmake:
+
+    find_package(Boost REQUIRED COMPONENTS json)
+    target_link_libraries(main PRIVATE Boost::json)
+
+or the generated cmake configs via:
+
+    find_package(boost_json REQUIRED CONFIG)
+    target_link_libraries(main PRIVATE Boost::json)
+
+libpsl provides pkg-config modules:
+
+  # Public Suffix List C library
+  libpsl
+
+Completed submission of vcpkg-tool-meson:x64-linux@1.12.1 to 1 binary cache(s) in 6.8 ms
+Waiting for 1 remaining binary cache submissions...
+Completed submission of libpsl[core,libidn2]:x64-linux@0.21.5#1 to 1 binary cache(s) in 45.2 ms (1/1)
+All requested installations completed successfully in: 11 min

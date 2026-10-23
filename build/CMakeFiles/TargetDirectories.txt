@@ -1,0 +1,3 @@
+/workspaces/McGuffin/build/CMakeFiles/McGuffin.dir
+/workspaces/McGuffin/build/CMakeFiles/edit_cache.dir
+/workspaces/McGuffin/build/CMakeFiles/rebuild_cache.dir

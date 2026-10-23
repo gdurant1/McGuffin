@@ -1,0 +1,36 @@
+{
+  "packages": [
+{
+  "SPDXID" : "SPDXRef-resource-0",
+  "checksums" : 
+  [
+    {
+      "algorithm" : "SHA512",
+      "checksumValue" : "98f6b79b778f7b0a15415bd750c3a8a097d650511cb4ec8115188e115c47053fe700f578895c097051c9bc3dfb6197c2b13a15de203273e1a3218884f86e90e8"
+    }
+  ],
+  "copyrightText" : "NOASSERTION",
+  "downloadLocation" : "https://raw.githubusercontent.com/mesonbuild/meson/70598bb7825f0f804fb31ec2795de5e79e7692a0/COPYING",
+  "licenseConcluded" : "NOASSERTION",
+  "licenseDeclared" : "NOASSERTION",
+  "name" : "meson-1.12.1-COPYING",
+  "packageFileName" : "meson-1.12.1-COPYING"
+},
+{
+  "SPDXID" : "SPDXRef-resource-1",
+  "checksums" : 
+  [
+    {
+      "algorithm" : "SHA512",
+      "checksumValue" : "0cc8434dbdfb2e32dd98277ca37c221c1e720dfc2922d49c749e0c70ec0a5e23bf4e15378814e2f17b1dc65ec6ec93d23df5ec31b2f7ed995a4ae36f4522c24a"
+    }
+  ],
+  "copyrightText" : "NOASSERTION",
+  "downloadLocation" : "https://github.com/mesonbuild/meson/archive/1.12.1.tar.gz",
+  "licenseConcluded" : "NOASSERTION",
+  "licenseDeclared" : "NOASSERTION",
+  "name" : "meson-1.12.1.tar.gz",
+  "packageFileName" : "meson-1.12.1.tar.gz"
+}
+  ]
+}

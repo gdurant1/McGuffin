@@ -50,6 +50,7 @@ int runCrawler(string seedUrl, string outputFolder) {
 
 // usage: McGuffin [seedUrl] [outputFolder]; asks for the seed when none is given
 int main(int argc, char* argv[]) {
+    
     string seedUrl;
     string outputFolder = "data";
     if (argc > 1) {
@@ -61,5 +62,11 @@ int main(int argc, char* argv[]) {
     if (argc > 2) {
         outputFolder = argv[2];
     }
+    
+    
     return runCrawler(seedUrl, outputFolder);
+
+
+
+
 }

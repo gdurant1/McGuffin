@@ -1,0 +1,19 @@
+{
+  "packages": [
+{
+  "SPDXID" : "SPDXRef-resource-0",
+  "checksums" : 
+  [
+    {
+      "algorithm" : "SHA512",
+      "checksumValue" : "32d872dd5d1dfe557dfdc4d76b99e0f9ebda3b6c1604274a2f2874c4ddd40b017b0587cf139d6e44c928b2f831094ded0c68164c04296e28ad8e030f68a1a269"
+    }
+  ],
+  "copyrightText" : "NOASSERTION",
+  "downloadLocation" : "git+https://github.com/boostorg/logic@boost-1.92.0",
+  "licenseConcluded" : "NOASSERTION",
+  "licenseDeclared" : "NOASSERTION",
+  "name" : "boostorg/logic"
+}
+  ]
+}

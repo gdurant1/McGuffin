@@ -1,0 +1,19 @@
+{
+  "packages": [
+{
+  "SPDXID" : "SPDXRef-resource-0",
+  "checksums" : 
+  [
+    {
+      "algorithm" : "SHA512",
+      "checksumValue" : "a8a93b488a119561be38594afb6de9c804164efcec3c35300d96cc699369dfc21c69b9533ec51a26a4335e7924fd52524e12beb49ad7a44eca9dc835e3378d2d"
+    }
+  ],
+  "copyrightText" : "NOASSERTION",
+  "downloadLocation" : "git+https://github.com/boostorg/describe@boost-1.92.0",
+  "licenseConcluded" : "NOASSERTION",
+  "licenseDeclared" : "NOASSERTION",
+  "name" : "boostorg/describe"
+}
+  ]
+}
