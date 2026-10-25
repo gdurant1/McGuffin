@@ -4,6 +4,8 @@
 #include "crawler.h"
 #include "graph.h"
 #include "read.h"
+#include "bridges.h"
+#include <Bridges.h>
 
 using namespace std;
 
@@ -13,6 +15,15 @@ void runGraph(crawler& webCrawler, string seedUrl) {
     graph.loadFromCrawler(webCrawler);
     string start = webCrawler.getPages().at(webCrawler.lookupId(seedUrl)).fetchUrl;
     vector<string> bfsOrder = graph.bfs(start);
+
+    vector<string> temp;
+    vector<int> tempura;
+
+    for (const auto& thing : graph.nodes()) {
+        temp.push_back(thing.second.url);
+        tempura.push_back(thing.second.distance);
+    }
+
     vector<string> dfsOrder = graph.dfs(start);
     cout << "bfs reached " << bfsOrder.size() << " pages, dfs reached " << dfsOrder.size() << " pages (depth 3)" << endl;
 
@@ -62,8 +73,8 @@ int main(int argc, char* argv[]) {
     if (argc > 2) {
         outputFolder = argv[2];
     }
-    
-    
+    //visualization thing. Hold off until problems are fixed
+    //createGraph(urls, dist);
     return runCrawler(seedUrl, outputFolder);
 
 
