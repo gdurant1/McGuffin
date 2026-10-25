@@ -22,10 +22,14 @@ foreach(lib IN ITEMS IDN2_LIBRARY UNISTRING_LIBRARY ICONV_LIBRARY)
     endif()
 endforeach()
 
+find_package(CURL REQUIRED)
+find_package(RapidJSON CONFIG REQUIRED)
+set(BRIDGES_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/bridges/bridges-cxx/src)
+
 add_executable(McGuffin main.cpp crawler.cpp dnsResolver.cpp extractor.cpp fetch.cpp urlStandard.cpp graph.cpp)
-target_include_directories(McGuffin PRIVATE ${PSL_INCLUDE_DIR})
+target_include_directories(McGuffin PRIVATE ${PSL_INCLUDE_DIR} ${BRIDGES_INCLUDE_DIR})
 target_link_libraries(McGuffin PRIVATE Boost::asio Boost::beast Boost::json OpenSSL::SSL OpenSSL::Crypto
-        ${PSL_LIBRARY} ${PSL_DEPENDENCIES})
+        ${PSL_LIBRARY} ${PSL_DEPENDENCIES} CURL::libcurl rapidjson)
 
 # linux: asio needs threads, openssl needs dl
 if(UNIX)

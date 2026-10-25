@@ -835,6 +835,10 @@ const map<pair<int, int>, edgeRecord>& crawler::getEdges() {
     return this->edges;
 }
 
+string crawler::getDataPath() {
+    return this->dataPath;
+}
+
 const map<int, hostRecord>& crawler::getHosts() {
     return this->hosts;
 }

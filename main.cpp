@@ -1,6 +1,9 @@
 #include <algorithm>
 #include <exception>
+#include <fstream>
 #include <iostream>
+#include <unordered_set>
+#include <boost/json.hpp>
 #include "crawler.h"
 #include "graph.h"
 #include "read.h"
@@ -8,6 +11,43 @@
 #include <Bridges.h>
 
 using namespace std;
+namespace json = boost::json;
+
+bool saveGraphJson(const WebsiteGraph& graph, string start, const vector<string>& bfsOrder, string graphPath) {
+    unordered_set<string> reached;
+    for (const string& url : bfsOrder) {
+        if (graph.nodes().at(url).status == "fetched") {
+            reached.insert(url);
+        }
+    }
+    json::array nodeList;
+    json::array edgeList;
+    for (const string& url : bfsOrder) {
+        if (!reached.contains(url)) {
+            continue;
+        }
+        const GraphNode& node = graph.nodes().at(url);
+        nodeList.push_back({{"url", node.url}, {"distance", node.distance}});
+        for (size_t i = 0; i < node.outgoing.size(); i++) {
+            if (reached.contains(node.outgoing[i])) {
+                edgeList.push_back({{"from", node.url}, {"to", node.outgoing[i]}, {"weight", node.weights[i]}});
+            }
+        }
+    }
+    json::object root;
+    root["seed"] = start;
+    root["nodes"] = nodeList;
+    root["edges"] = edgeList;
+
+    ofstream out(graphPath);
+    if (!out) {
+        cerr << "error: can't write " << graphPath << endl;
+        return false;
+    }
+    out << json::serialize(root);
+    cout << "graph saved in " << graphPath << endl;
+    return true;
+}
 
 // part 2: bfs and dfs over the finished crawl, plus the most-linked pages
 void runGraph(crawler& webCrawler, string seedUrl) {
@@ -16,13 +56,9 @@ void runGraph(crawler& webCrawler, string seedUrl) {
     string start = webCrawler.getPages().at(webCrawler.lookupId(seedUrl)).fetchUrl;
     vector<string> bfsOrder = graph.bfs(start);
 
-    vector<string> temp;
-    vector<int> tempura;
-
-    for (const auto& thing : graph.nodes()) {
-        temp.push_back(thing.second.url);
-        tempura.push_back(thing.second.distance);
-    }
+    string graphPath = webCrawler.getDataPath();
+    graphPath = graphPath.substr(0, graphPath.size() - 5) + "_graph.json";
+    bool graphSaved = saveGraphJson(graph, start, bfsOrder, graphPath);
 
     vector<string> dfsOrder = graph.dfs(start);
     cout << "bfs reached " << bfsOrder.size() << " pages, dfs reached " << dfsOrder.size() << " pages (depth 3)" << endl;
@@ -35,6 +71,10 @@ void runGraph(crawler& webCrawler, string seedUrl) {
     cout << "most-linked pages:" << endl;
     for (int i = 0; i < (int)ranked.size() && i < 10; i++) {
         cout << "  " << ranked[i]->incoming << "  " << ranked[i]->url << " (distance " << ranked[i]->distance << ")" << endl;
+    }
+
+    if (graphSaved) {
+        createGraph(graphPath);
     }
 }
 
@@ -73,8 +113,6 @@ int main(int argc, char* argv[]) {
     if (argc > 2) {
         outputFolder = argv[2];
     }
-    //visualization thing. Hold off until problems are fixed
-    //createGraph(urls, dist);
     return runCrawler(seedUrl, outputFolder);
 
 
