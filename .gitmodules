@@ -1,0 +1,3 @@
+[submodule "bridges/bridges-cxx"]
+	path = bridges/bridges-cxx
+	url = https://github.com/BridgesUNCC/bridges-cxx.git

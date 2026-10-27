@@ -14,10 +14,12 @@
 | `graph.h` | Declares `WebsiteGraph`, `GraphNode` (with link weights, incoming weight and status) and the `LinkFetcher` callback. |
 | `graph.cpp` | Loads the finished crawl into `WebsiteGraph`, runs BFS and DFS over it, and finds shortest distances from the start url; also keeps the original fetch-as-you-go `crawlBFS` and `crawlDFS`. |
 | `graph_demo.cpp` | Test program for `WebsiteGraph` with a fake site; has its own `main` and must be built with the crawler files. |
+| `bridges.h` | Reads `data/<seed>_graph.json` and sends the graph to BRIDGES (assignment 110), colored by distance from the seed. |
+| `bridges/bridges-cxx/` | The BRIDGES C++ library, kept as a git submodule (see "Get the code from GitHub"). |
 | `read.h` | readlib, copied from https://github.com/ShakaUVM/read; used by the extractor. |
 | `cacert.pem` | Bundled trusted certificates, used when the system certificate store isn't available (needed on Windows). |
 | `CMakeLists.txt` | Builds `McGuffin` (C++23); on Windows it also copies the vcpkg DLLs and `cacert.pem` next to the exe. |
-| `vcpkg.json` | Library list for vcpkg: Boost (Asio, Beast, JSON), OpenSSL and libpsl. |
+| `vcpkg.json` | Library list for vcpkg: Boost (Asio, Beast, JSON), OpenSSL, libpsl, and curl and RapidJSON for BRIDGES. |
 | `data/` | Default output folder for each crawl's `.json` and `.log` files (not committed). |
 
 ## Why some nodes have no lines
@@ -27,7 +29,12 @@ The graph page (`web/index.html`) shows only part of a crawl so it stays fast an
 ## Get the code from GitHub
 
 - **CLion:** File → New → Project from Version Control, then enter `https://github.com/gdurant1/McGuffin.git`.
-- **Terminal:** `git clone https://github.com/gdurant1/McGuffin.git`
+- **Terminal:** `git clone --recursive https://github.com/gdurant1/McGuffin.git`
+
+The BRIDGES library is a submodule. If `bridges/bridges-cxx` is empty after cloning (including in CLion or a Codespace), run this in the project folder:
+```
+git submodule update --init
+```
 
 Then follow one of the two sections below.
 
@@ -61,6 +68,14 @@ Then follow one of the two sections below.
    To get a crawl file out of a Codespace, right-click it under `data/` in the file panel and choose Download.
 
 Running the same seed again loads the saved `.json` and adds to it.
+
+## View the graph on BRIDGES
+
+After the BFS, the program sends the graph to BRIDGES and prints the link. The visualization is at:
+
+http://assignments.bridgesuncc.org/assignments/110/gTayona
+
+Each run replaces what's shown there with the latest crawl.
 
 ## View the graph (web folder)
 
