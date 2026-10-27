@@ -932,6 +932,7 @@ function loadFromServer(name) {
         return response.json();
     }).then(raw => {
         if (!Array.isArray(raw.pages)) throw new Error("no pages list");
+        currentFile = name;
         show(raw, name);
     }).catch(error => {
         document.getElementById("fileNote").textContent = "Couldn't load " + name + ": " + error.message;
@@ -949,6 +950,75 @@ function listServerFiles() {
         menu.hidden = false;
     }).catch(() => {});
 }
+
+// saved crawls panel: lists the crawl files in data/ (needs McGuffin's page server or another http server)
+let currentFile = "";
+
+function openSavedPanel() {
+    const panel = document.getElementById("savedPanel");
+    panel.hidden = false;
+    document.getElementById("savedBtn").setAttribute("aria-expanded", "true");
+    listSavedCrawls();
+}
+
+function closeSavedPanel() {
+    const panel = document.getElementById("savedPanel");
+    if (panel.hidden) return;
+    panel.hidden = true;
+    document.getElementById("savedBtn").setAttribute("aria-expanded", "false");
+}
+
+function listSavedCrawls() {
+    const note = document.getElementById("savedNote");
+    const list = document.getElementById("savedList");
+    list.replaceChildren();
+    if (location.protocol === "file:") {
+        note.textContent = "This page was opened as a file, so it can't see data/. Serve the project folder (McGuffin's menu option 1, or python3 -m http.server 8000) and open the page through that link.";
+        return;
+    }
+    note.textContent = "Loading...";
+    fetch("../data/").then(response => {
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        return response.text();
+    }).then(html => {
+        // part 3's _graph.json files have no pages list, so the page can't open them
+        const names = [...new DOMParser().parseFromString(html, "text/html").querySelectorAll("a")]
+            .map(a => decodeURIComponent(a.getAttribute("href")))
+            .filter(name => name.endsWith(".json") && !name.endsWith("_graph.json"));
+        if (names.length === 0) {
+            note.textContent = "No crawls in data/ yet. Run a crawl first.";
+            return;
+        }
+        note.textContent = names.length + (names.length === 1 ? " crawl" : " crawls") + " in data/";
+        for (const name of names) {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.textContent = name;
+            if (name === currentFile) button.classList.add("current");
+            button.addEventListener("click", () => {
+                closeSavedPanel();
+                loadFromServer(name);
+            });
+            const item = document.createElement("li");
+            item.append(button);
+            list.append(item);
+        }
+    }).catch(error => {
+        note.textContent = "Couldn't read data/ (" + error.message + "). Is the server still running?";
+    });
+}
+
+document.getElementById("savedBtn").addEventListener("click", () => {
+    if (document.getElementById("savedPanel").hidden) openSavedPanel();
+    else closeSavedPanel();
+});
+document.getElementById("savedRefresh").addEventListener("click", listSavedCrawls);
+document.addEventListener("click", e => {
+    if (!e.target.closest("#savedPanel") && !e.target.closest("#savedBtn")) closeSavedPanel();
+});
+document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeSavedPanel();
+});
 
 // controls
 document.getElementById("fileInput").addEventListener("change", e => { if (e.target.files[0]) loadFile(e.target.files[0]); });
