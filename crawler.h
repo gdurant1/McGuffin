@@ -154,6 +154,7 @@ public:
     const unordered_map<string, int>& getUrlToIdMap();
     const map<int, pageRecord>& getPages();
     const map<pair<int, int>, edgeRecord>& getEdges();
+    string getDataPath();
     const map<int, hostRecord>& getHosts();
     const map<string, siteRecord>& getSites();
     bool isOnGraph(int pageId);
