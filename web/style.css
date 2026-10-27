@@ -132,9 +132,85 @@ header.top {
 }
 
 .drop {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+/* saved crawls: list of the .json files in the data folder, opened from the header */
+.saved-panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 20;
+    width: min(380px, calc(100vw - 32px));
+    padding: 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.14);
+}
+
+.saved-panel[hidden] {
+    display: none;
+}
+
+.saved-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.saved-head h2 {
+    margin: 0;
+    font: 600 16px var(--font-display);
+}
+
+.saved-head .btn {
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+.saved-panel .small {
+    margin: 6px 0 8px;
+}
+
+.saved-list {
+    max-height: 320px;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+}
+
+.saved-list button {
+    display: block;
+    width: 100%;
+    padding: 9px 10px;
+    font: 400 13px var(--font-data);
+    text-align: left;
+    overflow-wrap: anywhere;
+    color: var(--fg);
+    background: none;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.saved-list button:hover {
+    background: var(--chip);
+}
+
+.saved-list button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+
+.saved-list button.current {
+    color: var(--accent);
+    font-weight: 500;
 }
 
 /* crawl menu from the data folder: sized to its content, not full width */
