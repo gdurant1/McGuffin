@@ -19,7 +19,16 @@
             <select id="dataFiles" hidden aria-label="Crawl files in the data folder"></select>
             <label class="btn primary" for="fileInput">Open crawl .json</label>
             <input id="fileInput" type="file" accept=".json,application/json" hidden>
+            <button class="btn" id="savedBtn" type="button" aria-expanded="false" aria-controls="savedPanel">Saved crawls</button>
             <button class="btn" id="sampleBtn" type="button">Show sample</button>
+            <div class="saved-panel" id="savedPanel" hidden>
+                <div class="saved-head">
+                    <h2>Saved crawls</h2>
+                    <button class="btn" id="savedRefresh" type="button">Refresh</button>
+                </div>
+                <p class="small" id="savedNote"></p>
+                <ul class="saved-list" id="savedList"></ul>
+            </div>
         </div>
     </header>
     <p class="status-msg" id="fileNote">Showing a made-up sample. Open a crawl file from your data folder.</p>
